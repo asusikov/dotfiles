@@ -1,14 +1,13 @@
 call plug#begin('~/.config/nvim/bundle')
 
 Plug 'nightsense/snow'
+Plug 'arcticicestudio/nord-vim'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'janko-m/vim-test'
-Plug 'tpope/vim-rake'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'edkolev/tmuxline.vim'
 Plug 'machakann/vim-sandwich'
 Plug 'ryanoasis/vim-devicons'
 Plug 'easymotion/vim-easymotion'
@@ -22,7 +21,9 @@ Plug 'w0rp/ale'
 Plug 'slim-template/vim-slim'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
+Plug 'zxqfl/tabnine-vim'
+Plug 'chaoren/vim-wordmotion'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
 " Plug 'fishbullet/deoplete-ruby'
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -36,10 +37,10 @@ call plug#end()
 " ---------------
 " basics
 " ---------------
+set t_md=
 syntax on
 set termguicolors
-set background=light
-colorscheme snow
+colorscheme nord
 set noerrorbells
 set novisualbell
 set number
@@ -52,6 +53,11 @@ set expandtab
 set clipboard=unnamed
 let mapleader = ","
 
+" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
+" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 "" Delete to black hole 
 noremap x "_x
 noremap d "_d
@@ -70,7 +76,7 @@ noremap <leader>z :bp<CR>
 noremap <leader>x :bn<CR>
 
 "" Close buffer
-noremap <leader>c :bd<CR>
+" noremap <leader>c :bd<CR>
 
 "" Move lines
 noremap <leader>j :m+<CR>
@@ -83,10 +89,13 @@ nnoremap <leader><S-o> O<ESC>
 "" Break line
 nnoremap <CR> i<CR><ESC>
 
+"" Close buffer but not pane
+nnoremap <leader>c :b#<bar>bd#<CR>
+
 " ---------------
 " vim-airline
 " ---------------
-let g:airline_theme='snow_light'
+" let g:airline_theme='snow_dark'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_modified = 1
 let g:airline_left_sep = ' '
@@ -157,7 +166,7 @@ let g:deoplete#enable_at_startup = 1
 " ---------------
 " scrooloose/nerdcommenter
 " ---------------
-let g:NERDSpaceDelims = 1
+" let g:NERDSpaceDelims = 1
 
 " ---------------
 " scrooloose/nerdtree
@@ -171,8 +180,12 @@ hi link EasyMotionTarget2First EasyMotionTarget
 hi link EasyMotionTarget2Second EasyMotionTarget
 
 " ---------------
-" tmuxline
+" vim-wordmotion
 " ---------------
-let g:tmuxline_theme = 'snow_light'
-let g:tmuxline_preset = 'minimal'
-let g:tmuxline_powerline_separators = 0
+let g:wordmotion_prefix = '.'
+
+" ---------------
+" ale
+" ---------------
+let g:ale_sign_error = '~~'
+let g:ale_sign_warning = '~~'
