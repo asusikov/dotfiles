@@ -5,7 +5,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-sandwich'
@@ -15,28 +15,36 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 Plug 'rizzatti/dash.vim'
-Plug 'tpope/vim-endwise'
 Plug 'mhinz/vim-startify'
 Plug 'w0rp/ale'
 Plug 'slim-template/vim-slim'
-Plug 'mileszs/ack.vim'
+Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'zxqfl/tabnine-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'liuchengxu/vista.vim'
 Plug 'chaoren/vim-wordmotion'
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
-" Plug 'fishbullet/deoplete-ruby'
+
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-rake'
+Plug 'tpope/vim-endwise'
 
+" Elixir
 Plug 'elixir-editors/vim-elixir'
+
+" Go
+" Plug 'fatih/vim-go'
+
+" Rust
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
 " ---------------
 " basics
 " ---------------
+let g:nord_bold = 0
 set t_md=
 syntax on
 set termguicolors
@@ -45,20 +53,14 @@ set noerrorbells
 set novisualbell
 set number
 set cursorline
-set t_Co=256
 set encoding=UTF-8
 set shiftwidth=2
 set tabstop=2
-set expandtab 	
+set expandtab
 set clipboard=unnamed
 let mapleader = ","
 
-" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-
-" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-"" Delete to black hole 
+"" Delete to black hole
 noremap x "_x
 noremap d "_d
 nnoremap dd "_dd
@@ -75,6 +77,7 @@ noremap <leader>s :w<CR>
 noremap <leader>z :bp<CR>
 noremap <leader>x :bn<CR>
 
+noremap <leader>q :ccl<CR>
 "" Close buffer
 " noremap <leader>c :bd<CR>
 
@@ -91,6 +94,9 @@ nnoremap <CR> i<CR><ESC>
 
 "" Close buffer but not pane
 nnoremap <leader>c :b#<bar>bd#<CR>
+
+"" Replace selected text 
+vnoremap <C-r> "hy:%s/<C-r>h//gc
 
 " ---------------
 " vim-airline
@@ -109,17 +115,19 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-" let g:airline_section_b = '%{FugitiveStatusline()}'
-" Just show the file name
+let g:airline_skip_empty_sections = 1
+let g:airline_section_b = ''
 let g:airline_section_c = '%F%m'
+let g:airline_section_x = ''
+let g:airline_section_y = ''
 let g:airline_section_z = ''
-"let g:airline_section_z = '%3p%% %{substitute(line("."), "\\v(\\d)((\\d\\d\\d)+\\d@!)@=", "\\1,", "g")}|%{substitute(line("$"), "\\v(\\d)((\\d\\d\\d)+\\d@!)@=", "\\1,", "g")}'
 
 " ---------------
 " NERDTree
 " ---------------
-map <silent> <Leader>n :NERDTreeToggle<CR>
-map <silent> <Leader>nf :NERDTreeFind<CR>
+map <silent> nt :NERDTreeToggle<CR>
+map <silent> nf :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen=1
 
 " ---------------
 " vim-test
@@ -130,14 +138,15 @@ nmap <silent> <Leader>e :TestLast<CR>
 let test#strategy = "dispatch"
 
 " ---------------
-" dash.vim 
+" dash.vim
 " ---------------
-nmap <silent> <leader>d <Plug>DashSearch
+nmap <silent> ds <Plug>DashSearch
 
 " ---------------
 " vim-rails
 " ---------------
-nmap <silent> <Leader>a :A<CR>
+nmap <silent> ra :A<CR>
+nmap <silent> rA :AV<CR>
 
 " ---------------
 " vim-startify
@@ -159,16 +168,6 @@ let g:goy_height = 100
 nmap <silent> <leader>g :Goyo<CR>
 
 " ---------------
-" deoplete.nvim
-" ---------------
-let g:deoplete#enable_at_startup = 1
-
-" ---------------
-" scrooloose/nerdcommenter
-" ---------------
-" let g:NERDSpaceDelims = 1
-
-" ---------------
 " scrooloose/nerdtree
 " ---------------
 let NERDTreeShowHidden=1
@@ -178,6 +177,8 @@ let NERDTreeShowHidden=1
 " ---------------
 hi link EasyMotionTarget2First EasyMotionTarget
 hi link EasyMotionTarget2Second EasyMotionTarget
+nmap ew <Plug>(easymotion-w)
+nmap eb <Plug>(easymotion-b)
 
 " ---------------
 " vim-wordmotion
@@ -189,3 +190,71 @@ let g:wordmotion_prefix = '.'
 " ---------------
 let g:ale_sign_error = '~~'
 let g:ale_sign_warning = '~~'
+let g:ale_set_highlights = 0
+let g:ale_linters_explicit = 1
+let g:ale_disable_lsp = 1
+let g:ale_linters = {
+\   'ruby': ['rubocop'],
+\}
+let g:ale_fixers = { 'ruby': ['rubocop'] } 
+nmap <leader>af <Plug>(ale_fix)
+
+" ---------------
+" ctrlsf
+" ---------------
+nmap <C-F>i <Plug>CtrlSFPrompt
+vmap <C-F>f <Plug>CtrlSFVwordExec
+vmap <C-F>F <Plug>CtrlSFVwordPath
+nmap <C-F>f <Plug>CtrlSFCwordExec
+nmap <C-F>F <Plug>CtrlSFCwordPath
+let g:ctrlsf_position = 'bottom'
+let g:ctrlsf_winsize = '30%'
+let g:ctrlsf_ackprg = 'rg'
+let g:ctrlsf_auto_focus = {
+    \ "at": "done",
+    \ "duration_less_than": 1000
+    \ }
+
+" ----------------
+" coc.nvim
+" ----------------
+let g:coc_global_extensions = ['coc-solargraph']
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> <leader>rn <Plug>(coc-rename)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" ----------------
+" liuchengxu/vista.vim
+" ----------------
+let g:vista_default_executive = 'coc'
+let g:vista_sidebar_width = 70
+let g:vista_echo_cursor = 0
+let g:vista_close_on_jump = 1
+nmap <silent> vf :Vista finder<CR>
+nmap <silent> vo :Vista<CR>
+
+" ----------------
+" junegunn/fzf.vim 
+" ----------------
+set rtp+=/usr/local/opt/fzf
+nmap <silent> ; :Buffers<CR>
+nmap <silent> <C-p> :Files<CR>
+
+if !exists('g:fzf_layout')
+  let $FZF_DEFAULT_OPTS .= '
+    \ --inline-info
+    \ --color fg:#D8DEE9,bg:#2E3440,hl:#81A1C1,fg+:#D8DEE9,bg+:#2E3440,hl+:#81A1C1
+    \ --color pointer:#81A1C1,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B'
+
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+endif
