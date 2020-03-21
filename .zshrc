@@ -180,3 +180,12 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 . /usr/local/opt/asdf/asdf.sh
 
 alias lg='lazygit'
+
+# create tmux session with nvim and lazygit
+create_tmux_development() {
+  tmux new -s $1 \; new-window \; new-window \; select-window -t 1 \; send-keys 'lg' C-m \; select-window -t 0 \; send-keys 'nvim' C-m
+}
+alias ctd='create_tmux_development'
+
+# alias for cmus-remote
+alias lcp='cmus-remote -u'
