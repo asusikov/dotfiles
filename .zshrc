@@ -175,6 +175,8 @@ POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='clear'
 
 # [ -n "$PS1" ] && sh ~/.config/nvim/bundle/snow/shell/snow_light.sh
 
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 . /usr/local/opt/asdf/asdf.sh
