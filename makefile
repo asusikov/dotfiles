@@ -5,6 +5,9 @@ create_links:
 	ln -s ~/dotfiles/.direnvrc ~/.direnvrc
 
 install_dependicies:
+	brew cask install iterm2
+	brew install zsh
+	brew install neovim
 	brew install asdf
 	brew install fzf
 	brew install lazygit
