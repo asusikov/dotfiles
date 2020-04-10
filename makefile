@@ -7,7 +7,7 @@ create_links:
 
 install_zsh:
 	brew install zsh
-	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 install_dependicies:
 	brew install neovim
