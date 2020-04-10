@@ -7,3 +7,8 @@ install_dependicies:
 
 update_dependicies:
 	brew upgrade
+
+install_fonts:
+	brew tap homebrew/cask-fonts
+	brew cask install font-jetbrainsmono-nerd-font
+
