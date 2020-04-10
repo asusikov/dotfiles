@@ -23,6 +23,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
 Plug 'chaoren/vim-wordmotion'
+Plug 'qpkorr/vim-bufkill'
+Plug 'sheerun/vim-polyglot'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -31,7 +33,7 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-endwise'
 
 " Elixir
-Plug 'elixir-editors/vim-elixir'
+" Plug 'elixir-editors/vim-elixir'
 
 " Go
 " Plug 'fatih/vim-go'
@@ -77,9 +79,7 @@ noremap <leader>s :w<CR>
 noremap <leader>z :bp<CR>
 noremap <leader>x :bn<CR>
 
-noremap <leader>q :ccl<CR>
-"" Close buffer
-" noremap <leader>c :bd<CR>
+noremap <silent> <leader>qf :ccl<CR>
 
 "" Move lines
 noremap <leader>j :m+<CR>
@@ -93,10 +93,12 @@ nnoremap <leader><S-o> O<ESC>
 nnoremap <CR> i<CR><ESC>
 
 "" Close buffer but not pane
-nnoremap <leader>c :b#<bar>bd#<CR>
+nnoremap <leader>w :BD<CR>
 
 "" Replace selected text 
 vnoremap <C-r> "hy:%s/<C-r>h//gc
+
+nnoremap sv :vsplit<CR>  
 
 " ---------------
 " vim-airline
@@ -165,7 +167,7 @@ endif
 " ---------------
 let g:goyo_width = 120
 let g:goy_height = 100
-nmap <silent> <leader>g :Goyo<CR>
+nmap <silent> gt :Goyo<CR>
 
 " ---------------
 " scrooloose/nerdtree
@@ -177,8 +179,9 @@ let NERDTreeShowHidden=1
 " ---------------
 hi link EasyMotionTarget2First EasyMotionTarget
 hi link EasyMotionTarget2Second EasyMotionTarget
-nmap ew <Plug>(easymotion-w)
-nmap eb <Plug>(easymotion-b)
+nmap mw <Plug>(easymotion-w)
+nmap me <Plug>(easymotion-e)
+nmap mb <Plug>(easymotion-b)
 
 " ---------------
 " vim-wordmotion
@@ -195,8 +198,9 @@ let g:ale_linters_explicit = 1
 let g:ale_disable_lsp = 1
 let g:ale_linters = {
 \   'ruby': ['rubocop'],
+\   'elixir': ['credo', 'dialyxir'],
 \}
-let g:ale_fixers = { 'ruby': ['rubocop'] } 
+let g:ale_fixers = { 'ruby': ['rubocop'], 'elixir': ['mix_format'] } 
 nmap <leader>af <Plug>(ale_fix)
 
 " ---------------
