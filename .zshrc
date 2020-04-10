@@ -77,6 +77,7 @@ plugins=(
   tmuxinator
   kubectl
   hanami
+  elixir
 )
 
 source $ZSH/oh-my-zsh.sh
