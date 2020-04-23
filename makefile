@@ -9,6 +9,7 @@ create_links:
 install_zsh:
 	brew install zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	brew install romkatv/powerlevel10k/powerlevel10k
 
 install_vim:
 	brew install neovim
