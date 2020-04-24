@@ -386,7 +386,6 @@
     # ⇣42 if behind the remote.
     (( VCS_STATUS_COMMITS_BEHIND )) && res+="${(g::)POWERLEVEL9K_VCS_COMMITS_BEHIND_ICON}"
     # ⇡42 if ahead of the remote; no leading space if also behind the remote: ⇣42⇡42.
-    (( VCS_STATUS_COMMITS_AHEAD && !VCS_STATUS_COMMITS_BEHIND )) && res+=" "
     (( VCS_STATUS_COMMITS_AHEAD  )) && res+="⇡${VCS_STATUS_COMMITS_AHEAD}"
     # ⇠42 if behind the push remote.
     (( VCS_STATUS_PUSH_COMMITS_BEHIND )) && res+="⇠${VCS_STATUS_PUSH_COMMITS_BEHIND}"
