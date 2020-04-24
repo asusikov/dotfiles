@@ -1,3 +1,6 @@
+install_brew:
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 create_links:
 	ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 	ln -s ~/dotfiles/.zshrc ~/.zshrc
@@ -7,7 +10,6 @@ create_links:
 	ln -s ~/dotfiles/.direnvrc ~/.direnvrc
 
 install_zsh:
-	brew install zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	brew install romkatv/powerlevel10k/powerlevel10k
 
