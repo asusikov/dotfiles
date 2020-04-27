@@ -1,5 +1,5 @@
 install_brew:
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 create_links:
 	ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
@@ -8,6 +8,10 @@ create_links:
 	mkdir -p ~/.config/nvim
 	ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
 	ln -s ~/dotfiles/.direnvrc ~/.direnvrc
+
+install_fonts:
+	brew tap homebrew/cask-fonts
+	brew cask install font-jetbrainsmono-nerd-font
 
 install_zsh:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -28,8 +32,3 @@ install_dependicies:
 
 update_dependicies:
 	brew upgrade
-
-install_fonts:
-	brew tap homebrew/cask-fonts
-	brew cask install font-jetbrainsmono-nerd-font
-
