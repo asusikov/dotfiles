@@ -7,7 +7,10 @@ create_links:
 	ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 	mkdir -p ~/.config/nvim
 	ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
-	ln -s ~/dotfiles/.direnvrc ~/.direnvrc
+	ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
+
+setup_git:
+	git config --global core.excludesfile ~/.gitignore_global
 
 install_fonts:
 	brew tap homebrew/cask-fonts
