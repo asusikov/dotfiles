@@ -60,7 +60,10 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 set clipboard=unnamed
+set timeoutlen=200
 let mapleader = ","
+
+noremap <silent> ht :noh<CR>
 
 "" Delete to black hole
 noremap x "_x
@@ -76,8 +79,8 @@ noremap C "_C
 noremap <leader>s :w<CR>
 
 "" Buffer nav
-noremap <leader>z :bp<CR>
-noremap <leader>x :bn<CR>
+noremap <silent> <C-[> :bp<CR>
+noremap <silent> <C-]> :bn<CR>
 
 noremap <silent> <leader>qf :ccl<CR>
 
@@ -148,7 +151,7 @@ nmap <silent> ds <Plug>DashSearch
 " vim-rails
 " ---------------
 nmap <silent> ra :A<CR>
-nmap <silent> rA :AV<CR>
+nmap <silent> RA :AV<CR>
 
 " ---------------
 " vim-startify
