@@ -79,8 +79,8 @@ noremap C "_C
 noremap <leader>s :w<CR>
 
 "" Buffer nav
-noremap <silent> <C-[> :bp<CR>
-noremap <silent> <C-]> :bn<CR>
+noremap <silent> BP :bp<CR>
+noremap <silent> BN :bn<CR>
 
 noremap <silent> <leader>qf :ccl<CR>
 
@@ -130,8 +130,8 @@ let g:airline_section_z = ''
 " ---------------
 " NERDTree
 " ---------------
-map <silent> nt :NERDTreeToggle<CR>
-map <silent> nf :NERDTreeFind<CR>
+map <silent> tt :NERDTreeToggle<CR>
+map <silent> tf :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen=1
 
 " ---------------
