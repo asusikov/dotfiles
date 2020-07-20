@@ -26,6 +26,7 @@ install_vim:
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa"
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 install_dependicies:
 	brew install asdf
