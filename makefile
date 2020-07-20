@@ -19,6 +19,7 @@ install_fonts:
 install_zsh:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	brew install romkatv/powerlevel10k/powerlevel10k
+	brew install zsh-syntax-highlighting
 
 install_vim:
 	brew install neovim
