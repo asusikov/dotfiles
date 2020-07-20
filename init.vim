@@ -93,7 +93,10 @@ nnoremap <leader>o o<ESC>
 nnoremap <leader><S-o> O<ESC>
 
 "" Break line
-nnoremap <CR> i<CR><ESC>
+nnoremap <expr> <CR> &buftype ==# 'quickfix' ? ':.cc<CR>' : 'i<CR><ESC>'
+nnoremap fn :cn<CR>
+nnoremap fp :cp<CR>
+" nnoremap <C-CR> :.cc<CR>
 
 "" Close buffer but not pane
 nnoremap <leader>w :BD<CR>
@@ -141,6 +144,12 @@ nmap <silent> <Leader>r :TestNearest<CR>
 nmap <silent> <Leader>t :TestFile<CR>
 nmap <silent> <Leader>e :TestLast<CR>
 let test#strategy = "dispatch"
+let test#ruby#rspec#options = '--format documentation'
+
+" ---------------
+" dispatch.vim
+" ---------------
+let g:dispatch_quickfix_height = 25
 
 " ---------------
 " dash.vim
