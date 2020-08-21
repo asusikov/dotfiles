@@ -26,6 +26,8 @@ Plug 'chaoren/vim-wordmotion'
 Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
