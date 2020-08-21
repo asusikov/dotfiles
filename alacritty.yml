@@ -23,23 +23,23 @@ font:
 
   # The normal (roman) font face to use.
   normal:
-    family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     # family: FiraCode Nerd Font
     # Style can be specified to pick a specific face.
-    # style: ExtraLight
-    style: Light
+    style: ExtraLight
+    # style: Light
 
   # The bold font face
   bold:
-    family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     # family: FiraCode Nerd Font
     # Style can be specified to pick a specific face.
-    # style: Regular
-    style: Medium
+    style: Regular
+    # style: Medium
 
   # The italic font face
   italic:
-    family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     # family: FiraCode Nerd Font
     # Style can be specified to pick a specific face.
     style: Italic
