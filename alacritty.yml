@@ -1,0 +1,88 @@
+window:
+  # Startup Mode (changes require restart)
+  startup_mode: Maximized
+  decorations: buttonless
+
+# Font configuration (changes require restart)
+font:
+  # The size to use.
+  size: 14.5
+
+  offset:
+    x: 0
+    y: 0 
+
+  # Note: This requires RESTART
+  # By default when you change the offset above you'll see an issue, where the texts are bottom
+  # aligned with the cursor, this is to make sure they center align.
+  # This offset should usually be 1/2 of the above offset-y being set.
+  glyph_offset:
+   x: 0
+   # Keeping this as half of offset to vertically align the text in cursor
+   y: 0
+
+  # The normal (roman) font face to use.
+  normal:
+    family: JetBrains Mono
+    # family: FiraCode Nerd Font
+    # Style can be specified to pick a specific face.
+    # style: ExtraLight
+    style: Light
+
+  # The bold font face
+  bold:
+    family: JetBrains Mono
+    # family: FiraCode Nerd Font
+    # Style can be specified to pick a specific face.
+    # style: Regular
+    style: Medium
+
+  # The italic font face
+  italic:
+    family: JetBrains Mono
+    # family: FiraCode Nerd Font
+    # Style can be specified to pick a specific face.
+    style: Italic
+  use_thin_strokes: true
+
+selection:
+  # semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+
+# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
+
+# Project:    Nord Alacritty
+# Version:    0.1.0
+# Repository: https://github.com/arcticicestudio/nord-alacritty
+# License:    MIT
+# References:
+#   https://github.com/alacritty/alacritty
+
+colors:
+  primary:
+    background: '#2e3440'
+    foreground: '#d8dee8'
+  cursor:
+    text: '#2e3440'
+    cursor: '#d8dee9'
+  normal:
+    black: '#3b4252'
+    red: '#bf616a'
+    green: '#a3be8b'
+    yellow: '#eacb8a'
+    blue: '#81a1c1'
+    magenta: '#b48ead'
+    cyan: '#88c0d0'
+    white: '#e5e9f0'
+  bright:
+    black: '#4c566a'
+    red: '#bf616a'
+    green: '#a3be8b'
+    yellow: '#eacb8a'
+    blue: '#81a1c1'
+    magenta: '#b48ead'
+    cyan: '#8fbcbb'
+    white: '#eceef4'

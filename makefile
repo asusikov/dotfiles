@@ -2,12 +2,14 @@ install_brew:
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 
 create_links:
-	ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-	ln -s ~/dotfiles/.zshrc ~/.zshrc
-	ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
+	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+	ln -sf ~/dotfiles/.zshrc ~/.zshrc
+	ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 	mkdir -p ~/.config/nvim
-	ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
-	ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
+	ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
+	ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
+	mkdir -p ~/.config/alacritty
+	ln -sf ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 setup_git:
 	git config --global core.excludesfile ~/.gitignore_global
