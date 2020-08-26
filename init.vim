@@ -25,6 +25,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'chaoren/vim-wordmotion'
 Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
+Plug 'jpalardy/vim-slime'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
@@ -131,6 +132,7 @@ let g:airline_section_c = '%F%m'
 let g:airline_section_x = ''
 let g:airline_section_y = ''
 let g:airline_section_z = ''
+let g:airline#extensions#vista#enabled = 0
 
 " ---------------
 " NERDTree
@@ -276,3 +278,11 @@ if !exists('g:fzf_layout')
   autocmd  FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 endif
+
+" ----------------
+" jpalardy/vim-slime 
+" ----------------
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+let g:slime_dont_ask_default = 1
