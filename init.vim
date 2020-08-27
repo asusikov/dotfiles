@@ -69,6 +69,10 @@ let mapleader = ","
 
 noremap <silent> ht :noh<CR>
 
+hi Statement gui=NONE
+hi MoreMsg gui=NONE
+hi ModeMsg cterm=NONE gui=NONE
+
 "" Delete to black hole
 noremap x "_x
 noremap d "_d
