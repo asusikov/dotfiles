@@ -64,6 +64,7 @@ set tabstop=2
 set expandtab
 set clipboard=unnamed
 set timeoutlen=200
+set hidden
 let mapleader = ","
 
 noremap <silent> ht :noh<CR>
