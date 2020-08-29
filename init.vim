@@ -26,7 +26,6 @@ Plug 'chaoren/vim-wordmotion'
 Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
 Plug 'jpalardy/vim-slime'
-
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " Ruby
@@ -63,7 +62,7 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 set clipboard=unnamed
-set timeoutlen=200
+set timeoutlen=400
 set hidden
 let mapleader = ","
 
@@ -84,17 +83,18 @@ noremap c "_c
 noremap C "_C
 
 "" Save file
-noremap <leader>s :w<CR>
+noremap <leader>fs :w<CR>
 
 "" Buffer nav
-noremap <silent> BP :bp<CR>
-noremap <silent> BN :bn<CR>
+noremap <silent> <Leader>bp :bp<CR>
+noremap <silent> <Leader>bn :bn<CR>
 
-noremap <silent> <leader>qf :ccl<CR>
+noremap <silent> <leader>qq :ccl<CR>
+noremap <silent> <leader>qo :botright cwindow 25<CR>
 
 "" Move lines
-noremap <leader>j :m+<CR>
-noremap <leader>k :m-2<CR>
+noremap <silent> <leader>j :m+<CR>
+noremap <silent> <leader>k :m-2<CR>
 
 "" Add lines
 nnoremap <leader>o o<ESC>
@@ -107,12 +107,14 @@ nnoremap fp :cp<CR>
 " nnoremap <C-CR> :.cc<CR>
 
 "" Close buffer but not pane
-nnoremap <leader>w :BD<CR>
+nnoremap <silent> <leader>fq :BD<CR>
+"" Close pane
+nnoremap <silent> <leader>pq :q<CR>
 
-"" Replace selected text 
+"" Replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc
 
-nnoremap sv :vsplit<CR>  
+nnoremap <silent> sv :vsplit<CR>
 
 " ---------------
 " vim-airline
@@ -142,16 +144,16 @@ let g:airline#extensions#vista#enabled = 0
 " ---------------
 " NERDTree
 " ---------------
-map <silent> tt :NERDTreeToggle<CR>
-map <silent> tf :NERDTreeFind<CR>
+map <silent> <Leader>nt :NERDTreeToggle<CR>
+map <silent> <Leader>nf :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen=1
 
 " ---------------
 " vim-test
 " ---------------
-nmap <silent> <Leader>r :TestNearest<CR>
-nmap <silent> <Leader>t :TestFile<CR>
-nmap <silent> <Leader>e :TestLast<CR>
+nmap <silent> <Leader>tr :TestNearest<CR>
+nmap <silent> <Leader>ta :TestFile<CR>
+nmap <silent> <Leader>te :TestLast<CR>
 let test#strategy = "dispatch"
 let test#ruby#rspec#options = '--format documentation'
 
@@ -163,13 +165,13 @@ let g:dispatch_quickfix_height = 25
 " ---------------
 " dash.vim
 " ---------------
-nmap <silent> ds <Plug>DashSearch
+nmap <silent> <Leader>ds <Plug>DashSearch
 
 " ---------------
 " vim-rails
 " ---------------
-nmap <silent> ra :A<CR>
-nmap <silent> RA :AV<CR>
+nmap <silent> <Leader>fa :A<CR>
+nmap <silent> <Leader>fav :AV<CR>
 
 " ---------------
 " vim-startify
@@ -221,7 +223,7 @@ let g:ale_linters = {
 \   'ruby': ['rubocop'],
 \   'elixir': ['credo', 'dialyxir'],
 \}
-let g:ale_fixers = { 'ruby': ['rubocop'], 'elixir': ['mix_format'] } 
+let g:ale_fixers = { 'ruby': ['rubocop'], 'elixir': ['mix_format'] }
 nmap <leader>af <Plug>(ale_fix)
 
 " ---------------
@@ -267,7 +269,7 @@ nmap <silent> vf :Vista finder<CR>
 nmap <silent> vo :Vista<CR>
 
 " ----------------
-" junegunn/fzf.vim 
+" junegunn/fzf.vim
 " ----------------
 set rtp+=/usr/local/opt/fzf
 nmap <silent> ; :Buffers<CR>
@@ -285,7 +287,7 @@ if !exists('g:fzf_layout')
 endif
 
 " ----------------
-" jpalardy/vim-slime 
+" jpalardy/vim-slime
 " ----------------
 let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
