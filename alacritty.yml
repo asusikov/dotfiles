@@ -6,11 +6,11 @@ window:
 # Font configuration (changes require restart)
 font:
   # The size to use.
-  size: 14.5
+  size: 15
 
   offset:
     x: 0 
-    y: 2
+    y: 0
 
   # Note: This requires RESTART
   # By default when you change the offset above you'll see an issue, where the texts are bottom
