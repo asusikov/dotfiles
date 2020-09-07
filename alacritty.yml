@@ -9,7 +9,7 @@ font:
   size: 15
 
   offset:
-    x: 0 
+    x: 0
     y: 0
 
   # Note: This requires RESTART
