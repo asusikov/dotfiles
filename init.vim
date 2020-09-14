@@ -4,6 +4,7 @@ Plug 'nightsense/snow'
 Plug 'arcticicestudio/nord-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-projectionist'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
@@ -64,7 +65,8 @@ set expandtab
 set clipboard=unnamed
 set timeoutlen=400
 set hidden
-let mapleader = ","
+let mapleader = " "
+nnoremap <SPACE> <Nop>
 
 noremap <silent> ht :noh<CR>
 
