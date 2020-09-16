@@ -1,6 +1,14 @@
 install_brew:
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 
+install_dependicies:
+	brew cask install alacritty
+	brew install asdf
+	brew install fzf
+	brew install lazygit
+	brew install ripgrep
+	brew install tmux
+
 create_links:
 	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 	ln -sf ~/dotfiles/.zshrc ~/.zshrc
@@ -29,13 +37,6 @@ install_vim:
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa"
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-install_dependicies:
-	brew install asdf
-	brew install fzf
-	brew install lazygit
-	brew install ripgrep
-	brew install tmux
 
 update_dependicies:
 	brew upgrade
