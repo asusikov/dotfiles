@@ -16,8 +16,8 @@ font:
   size: 15
 
   offset:
-    x: 0
-    y: 0
+    x: -1
+    y: -1
 
   # Note: This requires RESTART
   # By default when you change the offset above you'll see an issue, where the texts are bottom
