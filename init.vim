@@ -2,8 +2,10 @@ call plug#begin('~/.config/nvim/bundle')
 
 Plug 'nightsense/snow'
 Plug 'arcticicestudio/nord-vim'
+
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
+
 Plug 'tpope/vim-projectionist'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf.vim'
@@ -121,27 +123,24 @@ nnoremap <silent> sv :vsplit<CR>
 " ---------------
 " vim-airline
 " ---------------
-" let g:airline_theme='snow_dark'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_modified = 1
 let g:airline_left_sep = ' '
 let g:airline_left_alt_sep = '|'
 let g:airline_right_sep = ' '
 let g:airline_right_alt_sep = '|'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#branch#enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_skip_empty_sections = 1
-let g:airline_section_b = ''
 let g:airline_section_c = '%F%m'
-let g:airline_section_x = ''
 let g:airline_section_y = ''
-let g:airline_section_z = ''
+let g:airline_section_z = '%l/%L:%v'
 let g:airline#extensions#vista#enabled = 0
+
+let g:webdevicons_enable_airline_statusline_fileformat_symbols = 0
 
 " ---------------
 " NERDTree
