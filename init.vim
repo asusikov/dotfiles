@@ -274,7 +274,7 @@ nmap <silent> <leader>vo :Vista<CR>
 " ----------------
 set rtp+=/usr/local/opt/fzf
 nmap <silent> ; :Buffers<CR>
-nmap <silent> <C-p> :Files<CR>
+nmap <silent> <leader>p :Files<CR>
 
 if !exists('g:fzf_layout')
   let $FZF_DEFAULT_OPTS .= '
