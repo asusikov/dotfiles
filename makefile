@@ -8,6 +8,8 @@ install_dependicies:
 	brew install lazygit
 	brew install ripgrep
 	brew install tmux
+	brew cask install qutebrowser
+	brew cask install amethyst
 
 create_links:
 	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
