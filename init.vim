@@ -142,6 +142,7 @@ let g:airline#extensions#vista#enabled = 0
 
 let g:webdevicons_enable_airline_statusline_fileformat_symbols = 0
 
+let g:airline#themes#nord#palette = {}
 let g:airline#themes#nord#palette.insert_modified = {
       \ 'airline_c': [ '#2E3440' , '#81A1C1' , 255     , 53      , ''     ] ,
       \ 'airline_x': [ '#2E3440' , '#81A1C1' , 255     , 53      , ''     ] ,
