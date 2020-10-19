@@ -30,6 +30,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
 Plug 'jpalardy/vim-slime'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'honza/vim-snippets'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
