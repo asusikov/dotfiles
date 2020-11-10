@@ -31,9 +31,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'jpalardy/vim-slime'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'honza/vim-snippets'
+Plug 'liuchengxu/vim-which-key'
 
 " Ruby
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-endwise'
@@ -184,6 +185,10 @@ nmap <silent> <Leader>fav :AV<CR>
 " vim-startify
 " ---------------
 let g:startify_change_to_vcs_root = 1
+let g:startify_lists = [
+      \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ ]
 
 " ---------------
 " ack.vim
@@ -212,6 +217,8 @@ hi link EasyMotionTarget2Second EasyMotionTarget
 nmap mw <Plug>(easymotion-w)
 nmap me <Plug>(easymotion-e)
 nmap mb <Plug>(easymotion-b)
+map  mf <Plug>(easymotion-bd-f)
+nmap mf <Plug>(easymotion-overwin-f)
 
 " ---------------
 " vim-wordmotion
@@ -268,6 +275,14 @@ let g:coc_global_extensions = ['coc-solargraph']
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> <leader>rn <Plug>(coc-rename)
 nmap <silent> gr <Plug>(coc-references)
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+let g:coc_snippet_next = '<c-l>'
+let g:coc_snippet_prev = '<c-h>'
+
+imap <C-l> <Plug>(coc-snippets-expand)
+
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -323,5 +338,66 @@ let g:projectionist_heuristics = {
       \       'alternate': '{}.go',
       \       'type': 'test'
       \   },
+      \ },
+      \ '*.rb': {
+      \   'app/*.rb': {
+      \       'alternate': 'spec/{dirname}/{basename}_spec.rb',
+      \       'type': 'source'
+      \   },
+      \   'spec/*_spec.rb': {
+      \       'alternate': 'app/{dirname}/{basename}.rb',
+      \       'type': 'test'
+      \   },
       \ }
       \ }
+
+
+" Map leader to which_key
+nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
+
+" Create map to add keys to
+let g:which_key_map =  {}
+" Define a separator
+let g:which_key_sep = '→'
+" set timeoutlen=100
+
+" Not a fan of floating windows for this
+let g:which_key_use_floating_win = 0
+
+" Hide status line
+autocmd! FileType which_key
+autocmd  FileType which_key set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+
+" Change the colors if you want
+highlight default link WhichKey          Operator
+highlight default link WhichKeySeperator Identifier
+highlight default link WhichKeyGroup     Identifier
+highlight default link WhichKeyDesc      Function
+
+" f is for file
+let g:which_key_map.f = {
+  \ 'name' : '+file',
+  \ 'a' : [':A', 'open alternative file'],
+  \ 'av' : [':AV', 'open alternative file in horizontal split'],
+  \ 's' : [':w', 'save file'],
+  \ 'q' : [':BD', 'close file'],
+  \ }
+
+" t is for file
+let g:which_key_map.t = {
+  \ 'name' : '+tests',
+  \ 'a' : [':A', 'run all tests in file'],
+  \ 'e' : [':AV', 'rerun last test'],
+  \ 'r' : [':w', 'run test at current line'],
+  \ }
+
+" a is for ale
+let g:which_key_map.a = {
+  \ 'name' : '+ale',
+  \ 'f' : [':ale_fix', 'fix this file'],
+  \ }
+
+" Register which key map
+call which_key#register('<Space>', "g:which_key_map")
