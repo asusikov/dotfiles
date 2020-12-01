@@ -23,13 +23,13 @@ Plug 'w0rp/ale'
 Plug 'slim-template/vim-slim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'liuchengxu/vista.vim'
 Plug 'chaoren/vim-wordmotion'
 Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
-Plug 'jpalardy/vim-slime'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'jpalardy/vim-slime', { 'branch': 'main' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug', 'uml']}
 Plug 'honza/vim-snippets'
 Plug 'liuchengxu/vim-which-key'
 
@@ -43,7 +43,9 @@ Plug 'tpope/vim-endwise'
 " Plug 'elixir-editors/vim-elixir'
 
 " Rust
-Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim'
+
+" Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -117,7 +119,8 @@ nnoremap <silent> <leader>pq :q<CR>
 "" Replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc
 
-nnoremap <silent> sv :vsplit<CR>
+nnoremap <silent> <leader>pv :vsplit<CR>
+nnoremap <silent> <leader>ph :split<CR>
 
 " ---------------
 " vim-airline
@@ -228,9 +231,10 @@ let g:wordmotion_prefix = '.'
 " ---------------
 " ale
 " ---------------
-let g:ale_sign_error = '~~'
-let g:ale_sign_warning = '~~'
+let g:ale_sign_error = '|'
+let g:ale_sign_warning = '|'
 let g:ale_set_highlights = 0
+let g:ale_sign_column_always = 1
 let g:ale_linters_explicit = 1
 let g:ale_disable_lsp = 1
 let g:ale_lint_on_text_changed = 'never'
@@ -248,7 +252,7 @@ let g:ale_fixers = {
 \   'elixir': ['mix_format'],
 \   'go': ['gofmt']
 \}
-let g:ale_go_golangci_lint_options = '--fast'
+let g:ale_go_golangci_lint_options = '--fast --enable-all'
 let g:ale_fix_on_save = 1
 nmap <leader>af <Plug>(ale_fix)
 
@@ -272,9 +276,9 @@ let g:ctrlsf_auto_focus = {
 " coc.nvim
 " ----------------
 let g:coc_global_extensions = ['coc-solargraph']
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> <leader>rn <Plug>(coc-rename)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <leader>ld <Plug>(coc-definition)
+nmap <silent> <leader>lr <Plug>(coc-rename)
+nmap <silent> <leader>lu <Plug>(coc-references)
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
