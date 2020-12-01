@@ -316,7 +316,8 @@ nmap <silent> <leader>p :Files<CR>
 if !exists('g:fzf_layout')
   let $FZF_DEFAULT_OPTS .= '
     \ --inline-info
-    \ --color fg:#D8DEE9,bg:#2E3440,hl:#81A1C1,fg+:#D8DEE9,bg+:#2E3440,hl+:#81A1C1
+    \ --layout=reverse
+    \ --color fg:#D8DEE9,bg:#2E3440,hl:#81A1C1,fg+:#D8DEE9,bg+:#2E3440,hl+:#81A1C1,border:#4C566A
     \ --color pointer:#81A1C1,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B'
 
   autocmd! FileType fzf
