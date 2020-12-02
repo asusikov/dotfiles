@@ -122,6 +122,8 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc
 nnoremap <silent> <leader>pv :vsplit<CR>
 nnoremap <silent> <leader>ph :split<CR>
 
+nnoremap <silent> <leader>pc :pc<CR>
+
 " ---------------
 " vim-airline
 " ---------------
@@ -285,7 +287,7 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:coc_snippet_next = '<c-l>'
 let g:coc_snippet_prev = '<c-h>'
 
-imap <C-l> <Plug>(coc-snippets-expand)
+imap <C-u> <Plug>(coc-snippets-expand)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -312,11 +314,13 @@ nmap <silent> <leader>vo :Vista<CR>
 set rtp+=/usr/local/opt/fzf
 nmap <silent> ; :Buffers<CR>
 nmap <silent> <leader>p :Files<CR>
+let g:fzf_preview_window = []
 
 if !exists('g:fzf_layout')
   let $FZF_DEFAULT_OPTS .= '
     \ --inline-info
     \ --layout=reverse
+    \ --no-preview
     \ --color fg:#D8DEE9,bg:#2E3440,hl:#81A1C1,fg+:#D8DEE9,bg+:#2E3440,hl+:#81A1C1,border:#4C566A
     \ --color pointer:#81A1C1,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B'
 
