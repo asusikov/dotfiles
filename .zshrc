@@ -159,3 +159,8 @@ alias lcp='cmus-remote -u'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 bindkey '^N' clear-screen
+
+alias nv='nvim'
+
+export GOPATH="$HOME/go"
+PATH="$GOPATH/bin:$PATH"
