@@ -10,6 +10,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
+Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-sandwich'
 Plug 'ryanoasis/vim-devicons'
@@ -60,6 +61,8 @@ colorscheme nord
 set noerrorbells
 set novisualbell
 set number
+set numberwidth=1
+set signcolumn=yes:1
 set cursorline
 set encoding=UTF-8
 set shiftwidth=2
@@ -157,8 +160,8 @@ let g:airline#themes#nord#palette.visual_modified = g:airline#themes#nord#palett
 " ---------------
 " NERDTree
 " ---------------
-map <silent> <Leader>nt :NERDTreeToggle<CR>
-map <silent> <Leader>nf :NERDTreeFind<CR>
+map <silent> <Leader>ft :NERDTreeToggle<CR>
+map <silent> <Leader>ff :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen=1
 
 " ---------------
@@ -167,7 +170,7 @@ let NERDTreeQuitOnOpen=1
 nmap <silent> <Leader>tr :TestNearest<CR>
 nmap <silent> <Leader>ta :TestFile<CR>
 nmap <silent> <Leader>te :TestLast<CR>
-let test#strategy = "dispatch"
+let test#strategy = "vimux"
 let test#ruby#rspec#options = '--format documentation'
 
 " ---------------
@@ -252,7 +255,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'elixir': ['mix_format'],
-\   'go': ['gofmt']
+\   'go': ['gofmt', 'goimports']
 \}
 let g:ale_go_golangci_lint_options = '--fast --enable-all'
 let g:ale_fix_on_save = 1
@@ -281,6 +284,7 @@ let g:coc_global_extensions = ['coc-solargraph']
 nmap <silent> <leader>ld <Plug>(coc-definition)
 nmap <silent> <leader>lr <Plug>(coc-rename)
 nmap <silent> <leader>lu <Plug>(coc-references)
+xmap <silent> <leader>la <Plug>(coc-codeaction-selected)
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
@@ -313,7 +317,7 @@ nmap <silent> <leader>vo :Vista<CR>
 " ----------------
 set rtp+=/usr/local/opt/fzf
 nmap <silent> ; :Buffers<CR>
-nmap <silent> <leader>p :Files<CR>
+nmap <silent> <leader>fl :Files<CR>
 let g:fzf_preview_window = []
 
 if !exists('g:fzf_layout')
