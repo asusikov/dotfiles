@@ -1,0 +1,21 @@
+{
+  "diagnostic.enable": false,
+  "snippets.ultisnips.enable": true,
+  "snippets.snipmate.enable": true,
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "gosnippets/UltiSnips"
+  ],
+  "coc.preferences.hoverTarget": "preview",
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  }
+}
