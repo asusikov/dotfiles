@@ -17,6 +17,7 @@ create_links:
 	ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 	mkdir -p ~/.config/nvim
 	ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
+	ln -sf ~/dotfiles/coc-settings.json ~/.config/nvim/coc-settings.json
 	ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 	mkdir -p ~/.config/alacritty
 	ln -sf ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
