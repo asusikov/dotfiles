@@ -16,8 +16,8 @@ font:
   size: 15
 
   offset:
+    y: -5
     x: -1
-    y: 0
 
   # Note: This requires RESTART
   # By default when you change the offset above you'll see an issue, where the texts are bottom
@@ -34,17 +34,18 @@ font:
     # family: Fira Code
     # family: FiraCode Nerd Font
     # Style can be specified to pick a specific face.
-    # style: Regular
-    # style: ExtraLight
-    style: Light
+    # style: Light
+    style: ExtraLight
+    # style: Thin
 
   # The bold font face
   bold:
     family: JetBrainsMono Nerd Font
     # family: Fira Code
     # Style can be specified to pick a specific face.
-    style: Regular
-    # style: Medium
+    # style: Regular
+    # style: Bold
+    style: Medium
 
   # The italic font face
   italic:
