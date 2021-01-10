@@ -16,7 +16,7 @@ font:
   size: 15
 
   offset:
-    y: -2
+    y: -4
     x: 0
 
   # Note: This requires RESTART
@@ -26,7 +26,7 @@ font:
   glyph_offset:
    x: 0
    # Keeping this as half of offset to vertically align the text in cursor
-   y: -1
+   y: -2
 
   # The normal (roman) font face to use.
   normal:
