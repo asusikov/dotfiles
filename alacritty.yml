@@ -13,7 +13,7 @@ window:
 # Font configuration (changes require restart)
 font:
   # The size to use.
-  size: 15
+  size: 16
 
   offset:
     y: -3
