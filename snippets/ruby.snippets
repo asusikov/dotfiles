@@ -1,0 +1,31 @@
+# dry-rb option as dependency
+snippet dd
+	option :${1:dependency_name}, reader: :private, default: -> { ${2:dependency_init} }
+
+# scaffold spec
+snippet scsp
+	# frozen_string_literal: true
+
+	require 'rails_helper'
+
+	describe ${1:class_name} do
+		subject { described_class.new.${2:method} }
+
+		${3}
+	end
+
+# Rspec subject with described_class initialization
+snippet sbji
+	subject { described_class.new.${1:method} }
+
+# Rspec it { expect(subject) } matcher
+snippet isexp
+	it { expect(${1:subject}).to ${2:eq} }
+
+# yield_self block
+snippet .ys
+	.yield_self { |${1:params}| ${2:block} }
+
+# then block
+snippet .th
+	.then { |${1:params}| ${2:block} }
