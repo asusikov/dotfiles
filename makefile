@@ -8,6 +8,7 @@ install_dependicies:
 	brew install lazygit
 	brew install ripgrep
 	brew install tmux
+	brew install httpie
 	brew cask install qutebrowser
 	brew cask install amethyst
 
