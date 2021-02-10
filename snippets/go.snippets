@@ -9,3 +9,27 @@ snippet fn "function declaration"
 		${4}
 	}
 	${0}
+
+snippet tyi "type interface declaration"
+	type ${1} interface {
+		${2}
+	}
+	${0}
+
+snippet tys "type struct declaration"
+	type ${1} struct {
+		${2}
+	}
+	${0}
+
+snippet pkgm "package main and main function"
+	package main
+
+	func main() {
+		${0}
+	}
+
+snippet pkg "named package"
+	package `substitute(expand("%:h"), '\w*\/', '', 'g')`
+
+	${0}
