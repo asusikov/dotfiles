@@ -33,3 +33,43 @@ snippet pkg "named package"
 	package `substitute(expand("%:h"), '\w*\/', '', 'g')`
 
 	${0}
+
+snippet fa "anonymous function"
+	func(${1}) ${2} {
+		${0}
+	}
+
+snippet errf "Error with log.Fatal(err)"
+	if err != nil {
+		log.Fatal(err)
+	}
+	${0}
+
+snippet errn "Error return"
+	if err != nil {
+		return err
+	}
+	${0}
+
+snippet errn, "Error return with two return values"
+	if err != nil {
+		return ${1:nil}, ${2:err}
+	}
+	${0}
+
+snippet pfw "Format pritto writer"
+	fmt.Fprintf(${1:writer}, "${2}\n", ${3})
+	${0}
+
+snippet pfffff "Format pritto writer"
+	fmt.Fprintf(${1:writer}, "${2}\n", ${3})
+	${0}
+
+snippet iota "const ( ... = iota )"
+	const (
+		${1:NAME} ${2:Type} = iota
+		${0}
+	)
+
+snippet te "Test error"
+	t.Errorf("${1:message}", ${2}, ${3})
