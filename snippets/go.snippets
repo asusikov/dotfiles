@@ -39,29 +39,25 @@ snippet fa "anonymous function"
 		${0}
 	}
 
-snippet errf "Error with log.Fatal(err)"
+snippet ef "Error with log.Fatal(err)"
 	if err != nil {
 		log.Fatal(err)
 	}
 	${0}
 
-snippet errn "Error return"
+snippet en "Error return"
 	if err != nil {
 		return err
 	}
 	${0}
 
-snippet errn, "Error return with two return values"
+snippet en, "Error return with two return values"
 	if err != nil {
 		return ${1:nil}, ${2:err}
 	}
 	${0}
 
 snippet pfw "Format pritto writer"
-	fmt.Fprintf(${1:writer}, "${2}\n", ${3})
-	${0}
-
-snippet pfffff "Format pritto writer"
 	fmt.Fprintf(${1:writer}, "${2}\n", ${3})
 	${0}
 
