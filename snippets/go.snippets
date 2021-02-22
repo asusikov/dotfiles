@@ -45,13 +45,13 @@ snippet ef "Error with log.Fatal(err)"
 	}
 	${0}
 
-snippet en "Error return"
+snippet er "Error return"
 	if err != nil {
 		return err
 	}
 	${0}
 
-snippet en, "Error return with two return values"
+snippet er, "Error return with two return values"
 	if err != nil {
 		return ${1:nil}, ${2:err}
 	}

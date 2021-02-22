@@ -32,12 +32,16 @@ snippet .th
 
 # def function
 snippet df
-  def ${1:func_name}
-    ${0}
-  end
+	def ${1}
+		${0}
+	end
 
 # def call function
 snippet dfc
-  def call${1}
-    ${0}
-  end
+	def call${1}
+		${0}
+	end
+
+# yield 
+snippet yi
+	yield ${0}
