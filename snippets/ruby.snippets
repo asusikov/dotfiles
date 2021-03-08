@@ -2,6 +2,10 @@
 snippet dd
 	option :${1:dependency_name}, reader: :private, default: -> { ${2:dependency_init} }
 
+# dry-types attribute strict
+snippet das
+	attribute :${1}, Types::Strict::${2}
+
 # scaffold spec
 snippet scsp
 	# frozen_string_literal: true
