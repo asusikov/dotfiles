@@ -10,6 +10,17 @@ snippet fn "function declaration"
 	}
 	${0}
 
+snippet fh "handler declaration"
+	func ${1:funcName}(r *http.Request, w http.ResponseWriter) {
+		${2}
+	}
+	${0}
+
+snippet fa "anonymous function"
+	func(${1}) ${2} {
+		${0}
+	}
+
 snippet tyi "type interface declaration"
 	type ${1} interface {
 		${2}
@@ -33,11 +44,6 @@ snippet pkg "named package"
 	package `substitute(expand("%:h"), '\w*\/', '', 'g')`
 
 	${0}
-
-snippet fa "anonymous function"
-	func(${1}) ${2} {
-		${0}
-	}
 
 snippet ef "Error with log.Fatal(err)"
 	if err != nil {
