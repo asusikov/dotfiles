@@ -48,5 +48,8 @@ install_vim:
 	nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa"
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+install_go:
+	brew install go
+
 update_dependicies:
 	brew upgrade
