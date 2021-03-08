@@ -25,13 +25,14 @@ snippet tyi "type interface declaration"
 	type ${1} interface {
 		${2}
 	}
-	${0}
 
 snippet tys "type struct declaration"
 	type ${1} struct {
 		${2}
 	}
-	${0}
+
+snippet tyf "type func declaration"
+	type ${1} func(${2}) ${3}
 
 snippet pkgm "package main and main function"
 	package main
@@ -49,23 +50,25 @@ snippet ef "Error with log.Fatal(err)"
 	if err != nil {
 		log.Fatal(err)
 	}
-	${0}
 
 snippet er "Error return"
 	if err != nil {
 		return err
 	}
-	${0}
 
 snippet er, "Error return with two return values"
 	if err != nil {
 		return ${1:nil}, ${2:err}
 	}
-	${0}
 
-snippet pfw "Format pritto writer"
+snippet nr "Return nil"
+	return nil
+
+snippet nr, "Return multiple values with nil as last"
+	return ${1}, nil
+
+snippet pfw "Format print to writer"
 	fmt.Fprintf(${1:writer}, "${2}\n", ${3})
-	${0}
 
 snippet iota "const ( ... = iota )"
 	const (
@@ -75,3 +78,11 @@ snippet iota "const ( ... = iota )"
 
 snippet te "Test error"
 	t.Errorf("${1:message}", ${2}, ${3})
+
+snippet ae "assert.Equal"
+	assert.Equal(t, test.${1}, ${2}, test.name)
+
+snippet is "Init struct"
+	&${1}{
+		${2}
+	}
