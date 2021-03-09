@@ -86,3 +86,14 @@ snippet is "Init struct"
 	&${1}{
 		${2}
 	}
+
+snippet cns "multiple constants"
+	const (
+		${1}
+	)
+
+snippet cni "constants with iota"
+	const (
+		${1} = iota
+		${0}
+	)
