@@ -93,7 +93,6 @@ plugins=(
   tmuxinator
   kubectl
   hanami
-  elixir
   golang
 )
 
