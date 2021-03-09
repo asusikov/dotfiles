@@ -160,16 +160,16 @@ let g:airline#themes#nord#palette.visual_modified = g:airline#themes#nord#palett
 " ---------------
 " NERDTree
 " ---------------
-map <silent> <Leader>ft :NERDTreeToggle<CR>
-map <silent> <Leader>ff :NERDTreeFind<CR>
+map <silent> ft :NERDTreeToggle<CR>
+map <silent> ff :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen=1
 
 " ---------------
 " vim-test
 " ---------------
-nmap <silent> <Leader>tr :TestNearest<CR>
-nmap <silent> <Leader>ta :TestFile<CR>
-nmap <silent> <Leader>te :TestLast<CR>
+nmap <silent> tr :TestNearest<CR>
+nmap <silent> ta :TestFile<CR>
+nmap <silent> te :TestLast<CR>
 let test#strategy = "vimux"
 let test#ruby#rspec#options = '--format documentation'
 
@@ -186,8 +186,8 @@ nmap <silent> <Leader>ds <Plug>DashSearch
 " ---------------
 " vim-rails
 " ---------------
-nmap <silent> <Leader>fa :A<CR>
-nmap <silent> <Leader>fav :AV<CR>
+nmap <silent> fa :A<CR>
+nmap <silent> fav :AV<CR>
 
 " ---------------
 " vim-startify
@@ -282,10 +282,10 @@ let g:ctrlsf_auto_focus = {
 " coc.nvim
 " ----------------
 let g:coc_global_extensions = ['coc-solargraph']
-nmap <silent> <leader>ld <Plug>(coc-definition)
-nmap <silent> <leader>lr <Plug>(coc-rename)
-nmap <silent> <leader>lu <Plug>(coc-references)
-xmap <silent> <leader>la <Plug>(coc-codeaction-selected)
+nmap <silent> ld <Plug>(coc-definition)
+nmap <silent> lr <Plug>(coc-rename)
+nmap <silent> lu <Plug>(coc-references)
+xmap <silent> la <Plug>(coc-codeaction-selected)
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
@@ -310,15 +310,15 @@ let g:vista_default_executive = 'coc'
 let g:vista_sidebar_width = 70
 let g:vista_echo_cursor = 0
 let g:vista_close_on_jump = 1
-nmap <silent> <leader>vf :Vista finder<CR>
-nmap <silent> <leader>vo :Vista<CR>
+nmap <silent> vf :Vista finder<CR>
+nmap <silent> vo :Vista<CR>
 
 " ----------------
 " junegunn/fzf.vim
 " ----------------
 set rtp+=/usr/local/opt/fzf
 nmap <silent> ; :Buffers<CR>
-nmap <silent> <leader>fl :Files<CR>
+nmap <silent> fl :Files<CR>
 let g:fzf_preview_window = []
 
 if !exists('g:fzf_layout')
