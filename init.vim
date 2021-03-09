@@ -50,6 +50,14 @@ Plug 'tpope/vim-endwise'
 
 call plug#end()
 
+function! s:brew_path()
+  if system("uname -m") == "arm64"
+    return "/opt/homebrew"
+  else
+    return "/usr/local"
+  endif
+endfunction
+
 " ---------------
 " basics
 " ---------------
@@ -316,7 +324,8 @@ nmap <silent> vo :Vista<CR>
 " ----------------
 " junegunn/fzf.vim
 " ----------------
-set rtp+=/usr/local/opt/fzf
+let fzf_path=s:brew_path()."/opt/fzf"
+let &rtp .= ','.fzf_path
 nmap <silent> ; :Buffers<CR>
 nmap <silent> fl :Files<CR>
 let g:fzf_preview_window = []
