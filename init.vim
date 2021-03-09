@@ -51,7 +51,7 @@ Plug 'tpope/vim-endwise'
 call plug#end()
 
 function! s:brew_path()
-  if system("uname -m") == "arm64"
+  if system("uname -m") == "arm64\n"
     return "/opt/homebrew"
   else
     return "/usr/local"
