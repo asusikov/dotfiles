@@ -1,17 +1,17 @@
 snippet fm "method declaration"
-	func (${1:receiver} ${2:type}) ${3:funcName}(${4}) ${5} {
+	func (${1} ${2}) ${3}(${4}) ${5} {
 		${6}
 	}
 	${0}
 
 snippet fn "function declaration"
-	func ${1:funcName}(${2}) ${3} {
+	func ${1}(${2}) ${3} {
 		${4}
 	}
 	${0}
 
 snippet fh "handler declaration"
-	func ${1:funcName}(r *http.Request, w http.ResponseWriter) {
+	func ${1}(w http.ResponseWriter, r *http.Request) {
 		${2}
 	}
 	${0}
@@ -97,3 +97,6 @@ snippet cni "constants with iota"
 		${1} = iota
 		${0}
 	)
+
+snippet ppl "pp println"
+	pp.Println(${1})
