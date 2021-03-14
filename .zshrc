@@ -171,5 +171,7 @@ bindkey '^N' clear-screen
 
 alias nv='nvim'
 
+alias lst='tree --dirsfirst'
+
 export GOPATH="$HOME/go"
 PATH="$GOPATH/bin:$PATH"
