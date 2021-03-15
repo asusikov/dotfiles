@@ -265,7 +265,8 @@ let g:ale_fixers = {
 \   'elixir': ['mix_format'],
 \   'go': ['gofmt', 'goimports']
 \}
-let g:ale_go_golangci_lint_options = '--fast --enable-all'
+let g:ale_go_golangci_lint_options = '--fast'
+let g:ale_go_gofmt_options = '-s'
 let g:ale_go_goimports_options = "-local $(grep ^module go.mod | awk '{print $2}')"
 let g:ale_fix_on_save = 1
 nmap <leader>af <Plug>(ale_fix)
