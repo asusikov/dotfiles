@@ -56,9 +56,19 @@ snippet er "Error return"
 		return err
 	}
 
+snippet erw "Wrappped error return"
+	if err != nil {
+		return errors.Wrap(err, "${1}")
+	}
+
 snippet er, "Error return with two return values"
 	if err != nil {
-		return ${1:nil}, ${2:err}
+		return ${1:nil}, err
+	}
+
+snippet erw, "Wrapped error return with two return values"
+	if err != nil {
+		return ${1:nil}, errors.Wrap(err, "${2}")
 	}
 
 snippet nr "Return nil"
