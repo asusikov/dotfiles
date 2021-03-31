@@ -100,7 +100,13 @@ snippet te "Test error"
 	t.Errorf("${1:message}", ${2}, ${3})
 
 snippet ae "assert.Equal"
+	assert.Equal(t, ${1}, ${2})
+
+snippet aet "assert.Equal for table test"
 	assert.Equal(t, test.${1}, ${2}, test.name)
+
+snippet an "assert.Nil"
+	assert.Nil(t, ${1}${2:, test.name})
 
 snippet is "Init struct"
 	&${1}{
