@@ -126,3 +126,8 @@ snippet cni "constants with iota"
 
 snippet ppl "pp println"
 	pp.Println(${1})
+
+snippet forr, "for range loop"
+	for ${1:_}, ${2} := range ${3} {
+		${0:${VISUAL}}
+	}
