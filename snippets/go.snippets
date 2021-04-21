@@ -21,6 +21,16 @@ snippet fa "anonymous function"
 		${0}
 	}
 
+snippet fwe "wrap error function"
+	wrap := func(err error) error {
+		return fmt.Errorf("${1}: %w", err)
+	}
+
+snippet fwes "wrap error with step function"
+	wrap := func(step string, err error) error {
+		return fmt.Errorf("${1}: %s: %w", step, err)
+	}
+
 snippet tyi "type interface declaration"
 	type ${1} interface {
 		${2}
@@ -81,6 +91,11 @@ snippet erwf, "Wrappped error return"
 		return ${1:nil}, wrap(err)
 	}
 
+snippet erwfs, "Wrappped with step error return"
+	if err != nil {
+		return ${1:nil}, wrap(${2}, err)
+	}
+
 snippet nr "Return nil"
 	return nil
 
@@ -131,3 +146,114 @@ snippet forr, "for range loop"
 	for ${1:_}, ${2} := range ${3} {
 		${0:${VISUAL}}
 	}
+
+snippet ap= "append"
+	${1} = append(${1}, ${0})
+
+snippet hdle "scaffold handlers function"
+	type ${1}Request struct {
+	}
+
+	type ${1}Response struct {
+	}
+
+	func (handler *Handler) ${1}(request *${1}Request) (*${1}Response, error) {
+		return &${1}Response{}, nil
+	}
+
+	func (handler *Handler) Handle${1}(c echo.Context) error {
+		wrap := func(step string, err error) error {
+			return fmt.Errorf("openapi.Handler.Handle${1}: %s: %w", step, err)
+		}
+
+		request := &${1}Request{}
+
+		err := c.Bind(request)
+		if err != nil {
+			return wrap("parsing request", err)
+		}
+
+		validate := validator.New()
+		err = validate.Struct(request)
+		if err != nil {
+			return wrap("validate request params", err)
+		}
+
+		response, err := handler.${1}(request)
+		if err != nil {
+			return wrap("handling request", err)
+		}
+
+		err = jsonapi.MarshalPayload(c.Response().Writer, response)
+		if err != nil {
+			return wrap("marshaling payload", err)
+		}
+
+		return nil
+	}
+
+snippet tth "scaffold handler's table tests"
+	func Test${1}_${2}(t *testing.T) {
+		testCases := []struct {
+			desc         string
+			responseBody string
+		}{
+			{
+				desc: "when all parameters passed",
+			},
+		}
+
+		for _, test := range testCases {
+			t.Run(test.desc, func(t *testing.T) {
+				ctx, recorder := context.New()
+				handler := &${1}{}
+
+				err := handler.${2}(ctx)
+
+				switch test.desc {
+				default:
+					if assert.NoError(t, err) {
+						assert.Equal(t, http.StatusOK, recorder.Code)
+						assert.Equal(t, test.responseBody, recorder.Body.String())
+					}
+				}
+			})
+		}
+	}
+
+snippet tt "scaffold table tests"
+	func Test${1}(t *testing.T) {
+		testCases := []struct {
+			desc         string
+		}{
+			{
+				desc: "",
+			},
+		}
+
+		for _, test := range testCases {
+			t.Run(test.desc, func(t *testing.T) {
+				${0}
+
+				switch test.desc {
+				default:
+				}
+			})
+		}
+	}
+
+snippet sn "slice"
+	[]${1}{
+		${0}
+	}
+
+snippet si "slice item"
+	{
+		${0}
+	},
+
+snippet tti "new table test item"
+	{
+		desc: "${1}",
+		${0}
+	},
