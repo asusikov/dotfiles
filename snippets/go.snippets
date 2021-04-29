@@ -114,14 +114,23 @@ snippet iota "const ( ... = iota )"
 snippet te "Test error"
 	t.Errorf("${1:message}", ${2}, ${3})
 
-snippet ae "assert.Equal"
+snippet aeq "assert.Equal"
 	assert.Equal(t, ${1}, ${2})
 
-snippet aet "assert.Equal for table test"
+snippet aeqt "assert.Equal for table test"
 	assert.Equal(t, test.${1}, ${2}, test.name)
 
 snippet an "assert.Nil"
 	assert.Nil(t, ${1}${2:, test.name})
+
+snippet aerr "assert.Error"
+	assert.Error(t, err)${0}
+
+snippet anerr "assert.NoError"
+	assert.NoError(t, err)${0}
+
+snippet aerris "assert.ErrorIs"
+	assert.ErrorIs(t, err, ${0})
 
 snippet is "Init struct"
 	&${1}{
