@@ -178,3 +178,4 @@ PATH="$GOPATH/bin:$PATH"
 
 alias gota='go test ./...'
 alias golr='golangci-lint run'
+alias goga='go generate ./...'
