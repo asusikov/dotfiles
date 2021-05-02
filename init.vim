@@ -133,7 +133,8 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc
 nnoremap <silent> <leader>pv :vsplit<CR>
 nnoremap <silent> <leader>ph :split<CR>
 
-nnoremap <silent> <leader>pc :pc<CR>
+nnoremap <silent> <leader>pq :pc<CR>
+nnoremap <silent> <leader>aq :qa<CR>
 
 " ---------------
 " vim-airline
@@ -267,7 +268,7 @@ let g:ale_fixers = {
 \}
 let g:ale_go_golangci_lint_options = '--fast'
 let g:ale_go_gofmt_options = '-s'
-let g:ale_go_goimports_options = "-local $(grep ^module go.mod | awk '{print $2}')"
+" let g:ale_go_goimports_options = "-local $(grep ^module go.mod | awk '{print $2}')"
 let g:ale_fix_on_save = 1
 nmap <leader>af <Plug>(ale_fix)
 
