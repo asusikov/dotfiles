@@ -99,7 +99,8 @@ noremap c "_c
 noremap C "_C
 
 "" Save file
-noremap <leader>fs :w<CR>
+noremap <silent> <leader>sf :w<CR>
+noremap <silent> <leader>sa :wa<CR>
 
 "" Buffer nav
 noremap <silent> <Leader>bp :bp<CR>
@@ -122,19 +123,18 @@ nnoremap fn :cn<CR>
 nnoremap fp :cp<CR>
 " nnoremap <C-CR> :.cc<CR>
 
-"" Close buffer but not pane
-nnoremap <silent> <leader>fq :BD<CR>
-"" Close pane
-nnoremap <silent> <leader>pq :q<CR>
-
 "" Replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc
 
 nnoremap <silent> <leader>pv :vsplit<CR>
 nnoremap <silent> <leader>ph :split<CR>
 
-nnoremap <silent> <leader>pq :pc<CR>
-nnoremap <silent> <leader>aq :qa<CR>
+"" Close buffer but not pane
+nnoremap <silent> <leader>qf :BD<CR>
+"" Close pane
+nnoremap <silent> <leader>qp :q<CR>
+nnoremap <silent> <leader>qc :pc<CR>
+nnoremap <silent> <leader>qa :qa<CR>
 
 " ---------------
 " vim-airline
