@@ -166,40 +166,45 @@ snippet hdle "scaffold handlers function"
 	type ${1}Response struct {
 	}
 
-	func (handler *Handler) ${1}(request *${1}Request) (*${1}Response, error) {
+	func (controller *Controller) ${1}(c echo.Context) error {
+		request, err := parse${1}Request(c)
+		if err != nil {
+			return http.NewStatusBadRequestError(err)
+		}
+
+		response, err := controller.${1}(request)
+		if err != nil {
+			return fmt.Errorf("handling request: %w", err)
+		}
+
+		err = jsonapi.MarshalPayload(c.Response().Writer, response)
+		if err != nil {
+			return fmt.Errorf("marshaling response: %w", err)
+		}
+
+		return nil
+	}
+
+	func (controller *Controller) ${1}(request *${1}Request) (*${1}Response, error) {
 		return &${1}Response{}, nil
 	}
 
-	func (handler *Handler) Handle${1}(c echo.Context) error {
-		wrap := func(step string, err error) error {
-			return fmt.Errorf("openapi.Handler.Handle${1}: %s: %w", step, err)
-		}
-
+	func parse${1}Request(c echo.Context) (*${1}Request, error) {
 		request := &${1}Request{}
-
 		err := c.Bind(request)
 		if err != nil {
-			return wrap("parsing request", err)
+			return nil, fmt.Errorf("binding request to context: %w", err)
 		}
 
 		validate := validator.New()
 		err = validate.Struct(request)
 		if err != nil {
-			return wrap("validate request params", err)
+			return nil, fmt.Errorf("validating request params: %w", err)
 		}
 
-		response, err := handler.${1}(request)
-		if err != nil {
-			return wrap("handling request", err)
-		}
-
-		err = jsonapi.MarshalPayload(c.Response().Writer, response)
-		if err != nil {
-			return wrap("marshaling payload", err)
-		}
-
-		return nil
+		return request, nil
 	}
+
 
 snippet tth "scaffold handler's table tests"
 	func Test${1}_${2}(t *testing.T) {
