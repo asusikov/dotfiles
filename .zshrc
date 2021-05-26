@@ -176,7 +176,7 @@ alias lst='tree --dirsfirst'
 export GOPATH="$HOME/go"
 PATH="$GOPATH/bin:$PATH"
 
-alias gota='go test ./...'
+alias gota='go test $(go list ./... | grep -v /mocks | grep -v /test) -cover'
 alias golr='golangci-lint run'
 alias goga='go generate ./...'
 alias gomt='go mod tidy'
