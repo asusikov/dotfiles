@@ -264,7 +264,8 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'elixir': ['mix_format'],
-\   'go': ['gofmt', 'goimports']
+\   'go': ['gofmt', 'goimports'],
+\   'json': ['jq']
 \}
 let g:ale_go_golangci_lint_options = '--fast'
 let g:ale_go_gofmt_options = '-s'
