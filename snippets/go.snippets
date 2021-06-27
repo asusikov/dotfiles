@@ -44,6 +44,14 @@ snippet tys "type struct declaration"
 snippet tyf "type func declaration"
 	type ${1} func(${2}) ${3}
 
+snippet tyu "type usecase declaration"
+	type ${1}Usecase struct {
+	}
+
+	func (usecase *${1}Usecase) Do() error {
+		${0}
+	}
+
 snippet pkgm "package main and main function"
 	package main
 
@@ -53,6 +61,11 @@ snippet pkgm "package main and main function"
 
 snippet pkg "named package"
 	package `substitute(expand("%:h"), '\w*\/', '', 'g')`
+
+	${0}
+
+snippet pkgt "named package"
+	package `substitute(expand("%:h"), '\w*\/', '', 'g')`_test
 
 	${0}
 
