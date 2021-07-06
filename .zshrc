@@ -180,3 +180,7 @@ alias gota='go test $(go list ./... | grep -v /mocks | grep -v /test) -cover'
 alias golr='golangci-lint run'
 alias goga='go generate ./...'
 alias gomt='go mod tidy'
+
+alias glmr='glab mr view -c'
+alias glmrl='glab mr list'
+alias glci='glab ci view'
