@@ -1,8 +1,12 @@
 snippet fm "method declaration"
 	func (${1} ${2}) ${3}(${4}) ${5} {
-		${6}
+		${0}
 	}
-	${0}
+
+snippet fmu "method of usecase declaration"
+	func (usecase *${1}Usecase) ${2}(${3}) ${4} {
+		${0}
+	}
 
 snippet fn "function declaration"
 	func ${1}(${2}) ${3} {
