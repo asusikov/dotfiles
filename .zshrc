@@ -157,7 +157,23 @@ alias lg='lazygit'
 
 # create tmux session with nvim and lazygit
 create_tmux_development() {
-  tmux new -s $1 \; new-window \; new-window \; select-window -t 1 \; send-keys 'lg' C-m \; select-window -t 0 \; send-keys 'nvim' C-m
+  # tmux new -s $1 -n nvim \; new-window -n 'gitlab' \; new-window \; select-window -t 0 \; send-keys 'nv' C-m \; split-window -v -p 30 \;
+  tmux new -s $1 -n nvim \; \
+    new-window -n gitlab \; \
+    new-window -n httpie \; \
+    new-window -n psql \; \
+    new-window -n deps \; \
+    select-window -t 0 \; \
+    split-window -v -p 30 \; \
+    select-pane -t 0 \; \
+    send-keys 'nv' C-m \; \
+  #   select-window -t 2 \; \
+  #   split-window -v \; \
+  #   select-pane -t 0 \; \
+  #   split-window -h \; \
+  #   select-pane -t 0 \; \
+  #   send-keys 'cd ~/Development/httpie/' C-m \; \
+  #   select-window -t 0 \; \
 }
 alias ctd='create_tmux_development'
 
@@ -184,3 +200,5 @@ alias gomt='go mod tidy'
 alias glmr='glab mr view -c'
 alias glmrl='glab mr list'
 alias glci='glab ci view'
+autoload -U compinit; compinit
+source /Users/alexandersusikov/.sbm-cli/completion/zsh/sbm-cli
