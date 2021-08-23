@@ -1,3 +1,4 @@
 .tool-versions
 docker-compose.development.yml
 docker-compose.test.yml
+dump.rdb
