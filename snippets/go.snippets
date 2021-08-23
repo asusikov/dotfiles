@@ -4,7 +4,7 @@ snippet fm "method declaration"
 	}
 
 snippet fmu "method of usecase declaration"
-	func (usecase *${1}Usecase) ${2}(${3}) ${4} {
+	func (usecase *${1}) ${2}(${3}) ${4} {
 		${0}
 	}
 
@@ -23,6 +23,11 @@ snippet fh "handler declaration"
 snippet fa "anonymous function"
 	func(${1}) ${2} {
 		${0}
+	}
+
+snippet fc "constructor"
+	func New${1}() *${2} {
+		return &${2}{}
 	}
 
 snippet fwe "wrap error function"
@@ -157,6 +162,9 @@ snippet is "Init struct"
 		${2}
 	}
 
+snippet isl "Init map"
+	[]${1}{}
+
 snippet cns "multiple constants"
 	const (
 		${1}
@@ -257,23 +265,54 @@ snippet tth "scaffold handler's table tests"
 
 snippet tt "scaffold table tests"
 	func Test${1}(t *testing.T) {
-		testCases := []struct {
-			desc         string
-		}{
+		type testCase struct {
+			desc string
+		}
+
+		${2} := func(test testCase) error {
+			${0}
+		}
+
+		tests := []testCase{
 			{
-				desc: "",
+				desc: "happy path",
 			},
 		}
 
 		for _, test := range testCases {
 			t.Run(test.desc, func(t *testing.T) {
-				${0}
-
-				switch test.desc {
-				default:
-				}
+				err := ${2}(test)
 			})
 		}
+	}
+
+snippet tbdd "scaffold bdd test"
+	import (
+		"testing"
+
+		. "github.com/smartystreets/goconvey/convey"
+	)
+
+	func TestList_Do(t *testing.T) {
+		Convey("Handle metrics list", t, func() {
+			// Let
+			var (
+				err error
+			)
+
+			// Subject
+			subject := func() error {
+				return nil
+			}
+
+			Convey("happy path", func() {
+				err = subject()
+
+				Convey("the error shoulb be nil", func() {
+					So(err, ShouldBeNil)
+				})
+			})
+		})
 	}
 
 snippet sn "slice"
