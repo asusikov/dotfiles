@@ -87,6 +87,9 @@ noremap <silent> ht :noh<CR>
 hi Statement gui=NONE
 hi MoreMsg gui=NONE
 hi ModeMsg cterm=NONE gui=NONE
+hi ModeMsg cterm=NONE gui=NONE
+hi RubyConstant guifg=#ECEFF4
+hi String guifg=#88C0D0
 
 "" Delete to black hole
 noremap x "_x
@@ -265,11 +268,12 @@ let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'elixir': ['mix_format'],
 \   'go': ['gofmt', 'goimports'],
-\   'json': ['jq']
+\   'json': ['jq'],
+\   'sql': ['pgformatter'],
 \}
 let g:ale_go_golangci_lint_options = '--fast'
 let g:ale_go_gofmt_options = '-s'
-" let g:ale_go_goimports_options = "-local $(grep ^module go.mod | awk '{print $2}')"
+let g:ale_go_goimports_options = "-local $(grep ^module go.mod | awk '{print $2}')"
 let g:ale_fix_on_save = 1
 nmap <leader>af <Plug>(ale_fix)
 
