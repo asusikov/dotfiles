@@ -200,5 +200,3 @@ alias gomt='go mod tidy'
 alias glmr='glab mr view -c'
 alias glmrl='glab mr list'
 alias glci='glab ci view'
-autoload -U compinit; compinit
-source /Users/alexandersusikov/.sbm-cli/completion/zsh/sbm-cli
