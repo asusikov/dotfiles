@@ -90,6 +90,7 @@ hi ModeMsg cterm=NONE gui=NONE
 hi ModeMsg cterm=NONE gui=NONE
 hi RubyConstant guifg=#ECEFF4
 hi String guifg=#88C0D0
+hi Number guifg=#88C0D0
 
 "" Delete to black hole
 noremap x "_x
