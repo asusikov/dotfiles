@@ -293,8 +293,8 @@ snippet tbdd "scaffold bdd test"
 		. "github.com/smartystreets/goconvey/convey"
 	)
 
-	func TestList_Do(t *testing.T) {
-		Convey("Handle metrics list", t, func() {
+	func Test${1}(t *testing.T) {
+		Convey("${2}", t, func() {
 			// Let
 			var (
 				err error
@@ -302,13 +302,15 @@ snippet tbdd "scaffold bdd test"
 
 			// Subject
 			subject := func() error {
+				${0}
+
 				return nil
 			}
 
 			Convey("happy path", func() {
 				err = subject()
 
-				Convey("the error shoulb be nil", func() {
+				Convey("the error should be nil", func() {
 					So(err, ShouldBeNil)
 				})
 			})
