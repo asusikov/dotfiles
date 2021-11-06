@@ -34,6 +34,14 @@ snippet .ys
 snippet .th
 	.then { |${1:params}| ${2:block} }
 
+# each block
+snippet .ea
+	${1}.each { |${2}| ${0} }
+
+# map block
+snippet .mp
+	${1}.map { |${2}| ${0} }
+
 # def function
 snippet df
 	def ${1}
