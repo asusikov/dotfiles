@@ -140,6 +140,11 @@ nnoremap <silent> <leader>qp :q<CR>
 nnoremap <silent> <leader>qc :pc<CR>
 nnoremap <silent> <leader>qa :qa<CR>
 
+map <S-l> <C-W>l
+map <S-j> <C-W>j
+map <S-k> <C-W>j
+map <S-h> <C-W>h
+
 " ---------------
 " vim-airline
 " ---------------
@@ -302,13 +307,14 @@ nmap <silent> ld <Plug>(coc-definition)
 nmap <silent> lr <Plug>(coc-rename)
 nmap <silent> lu <Plug>(coc-references)
 xmap <silent> la <Plug>(coc-codeaction-selected)
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-let g:coc_snippet_next = '<c-l>'
-let g:coc_snippet_prev = '<c-h>'
+let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_prev = '<c-tab>'
 
-imap <C-u> <Plug>(coc-snippets-expand)
+" imap <C-u> <Plug>(coc-snippets-expand)
+imap <tab> <Plug>(coc-snippets-expand)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
