@@ -140,10 +140,10 @@ nnoremap <silent> <leader>qp :q<CR>
 nnoremap <silent> <leader>qc :pc<CR>
 nnoremap <silent> <leader>qa :qa<CR>
 
-map <S-l> <C-W>l
-map <S-j> <C-W>j
-map <S-k> <C-W>j
-map <S-h> <C-W>h
+map <right> <C-W>l
+map <down> <C-W>j
+map <up> <C-W>k
+map <left> <C-W>h
 
 " ---------------
 " vim-airline
