@@ -84,7 +84,7 @@ export ZSH="$HOME/.oh-my-zsh"
 plugins=(
   git
   bundler
-  osx
+  macos
   ruby
   rails
   docker-compose
