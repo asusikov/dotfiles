@@ -1,54 +1,11 @@
-call plug#begin('~/.config/nvim/bundle')
+source ~/.config/nvim/init_configs/plug.vim
 
-Plug 'nightsense/snow'
-Plug 'arcticicestudio/nord-vim'
+source ~/.config/nvim/init_configs/basics.vim
+source ~/.config/nvim/init_configs/colours.vim
+source ~/.config/nvim/init_configs/keymaps.vim
 
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-commentary'
-
-Plug 'tpope/vim-projectionist'
-Plug 'vim-airline/vim-airline'
-Plug 'junegunn/fzf.vim'
-Plug 'janko-m/vim-test'
-Plug 'benmills/vimux'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'machakann/vim-sandwich'
-Plug 'ryanoasis/vim-devicons'
-Plug 'easymotion/vim-easymotion'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-dispatch'
-Plug 'rizzatti/dash.vim'
-Plug 'mhinz/vim-startify'
-Plug 'w0rp/ale'
-Plug 'slim-template/vim-slim'
-Plug 'dyng/ctrlsf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'liuchengxu/vista.vim'
-Plug 'chaoren/vim-wordmotion'
-Plug 'qpkorr/vim-bufkill'
-Plug 'sheerun/vim-polyglot'
-Plug 'jpalardy/vim-slime', { 'branch': 'main' }
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug', 'uml']}
-Plug 'honza/vim-snippets'
-Plug 'liuchengxu/vim-which-key'
-
-" Ruby
-" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-endwise'
-
-" Elixir
-" Plug 'elixir-editors/vim-elixir'
-
-" Rust
-" Plug 'rust-lang/rust.vim'
-
-" Plug 'fatih/vim-go'
-
-call plug#end()
+source ~/.config/nvim/init_configs/airline.vim
+source ~/.config/nvim/init_configs/coc.vim
 
 function! s:brew_path()
   if system("uname -m") == "arm64\n"
@@ -57,123 +14,6 @@ function! s:brew_path()
     return "/usr/local"
   endif
 endfunction
-
-" ---------------
-" basics
-" ---------------
-let g:nord_bold = 0
-set t_md=
-syntax on
-set termguicolors
-colorscheme nord
-set noerrorbells
-set novisualbell
-set number
-set numberwidth=1
-set signcolumn=yes:1
-set cursorline
-set encoding=UTF-8
-set shiftwidth=2
-set tabstop=2
-set expandtab
-set clipboard=unnamed
-set timeoutlen=400
-set hidden
-let mapleader = " "
-nnoremap <SPACE> <Nop>
-
-noremap <silent> ht :noh<CR>
-
-hi Statement gui=NONE
-hi MoreMsg gui=NONE
-hi ModeMsg cterm=NONE gui=NONE
-hi ModeMsg cterm=NONE gui=NONE
-hi RubyConstant guifg=#ECEFF4
-hi String guifg=#88C0D0
-hi Number guifg=#88C0D0
-
-"" Delete to black hole
-noremap x "_x
-noremap d "_d
-nnoremap dd "_dd
-noremap D "_D
-
-"" Cut to black hole
-noremap c "_c
-noremap C "_C
-
-"" Save file
-noremap <silent> <leader>sf :w<CR>
-noremap <silent> <leader>sa :wa<CR>
-
-"" Buffer nav
-noremap <silent> <Leader>bp :bp<CR>
-noremap <silent> <Leader>bn :bn<CR>
-
-noremap <silent> <leader>qq :ccl<CR>
-noremap <silent> <leader>qo :botright cwindow 25<CR>
-
-"" Move lines
-noremap <silent> <leader>j :m+<CR>
-noremap <silent> <leader>k :m-2<CR>
-
-"" Add lines
-nnoremap <leader>o o<ESC>
-nnoremap <leader><S-o> O<ESC>
-
-"" Break line
-nnoremap <expr> <CR> &buftype ==# 'quickfix' ? ':.cc<CR>' : 'i<CR><ESC>'
-nnoremap fn :cn<CR>
-nnoremap fp :cp<CR>
-" nnoremap <C-CR> :.cc<CR>
-
-"" Replace selected text
-vnoremap <C-r> "hy:%s/<C-r>h//gc
-
-nnoremap <silent> <leader>pv :vsplit<CR>
-nnoremap <silent> <leader>ph :split<CR>
-
-"" Close buffer but not pane
-nnoremap <silent> <leader>qf :BD<CR>
-"" Close pane
-nnoremap <silent> <leader>qp :q<CR>
-nnoremap <silent> <leader>qc :pc<CR>
-nnoremap <silent> <leader>qa :qa<CR>
-
-map <right> <C-W>l
-map <down> <C-W>j
-map <up> <C-W>k
-map <left> <C-W>h
-
-" ---------------
-" vim-airline
-" ---------------
-let g:airline_powerline_fonts = 1
-let g:airline_detect_modified = 1
-let g:airline_left_sep = ' '
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = ' '
-let g:airline_right_alt_sep = '|'
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#branch#enabled = 0
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_skip_empty_sections = 1
-let g:airline_section_c = '%f%m'
-let g:airline_section_y = ''
-let g:airline_section_z = '%l/%L:%v'
-let g:airline#extensions#vista#enabled = 0
-
-let g:webdevicons_enable_airline_statusline_fileformat_symbols = 0
-
-let g:airline#themes#nord#palette = {}
-let g:airline#themes#nord#palette.insert_modified = {
-      \ 'airline_c': [ '#2E3440' , '#81A1C1' , 255     , 53      , ''     ] ,
-      \ 'airline_x': [ '#2E3440' , '#81A1C1' , 255     , 53      , ''     ] ,
-      \ }
-let g:airline#themes#nord#palette.normal_modified = g:airline#themes#nord#palette.insert_modified
-let g:airline#themes#nord#palette.visual_modified = g:airline#themes#nord#palette.insert_modified
 
 " ---------------
 " NERDTree
@@ -299,34 +139,6 @@ let g:ctrlsf_auto_focus = {
     \ "at": "done",
     \ "duration_less_than": 1000
     \ }
-
-" ----------------
-" coc.nvim
-" ----------------
-let g:coc_global_extensions = ['coc-solargraph']
-nmap <silent> ld <Plug>(coc-definition)
-nmap <silent> lr <Plug>(coc-rename)
-nmap <silent> lu <Plug>(coc-references)
-xmap <silent> la <Plug>(coc-codeaction-selected)
-" inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-let g:coc_snippet_next = '<tab>'
-let g:coc_snippet_prev = '<c-tab>'
-
-" imap <C-u> <Plug>(coc-snippets-expand)
-" imap <tab> <Plug>(coc-snippets-expand)
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? coc#_select_confirm() : "\<Tab>"
-
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
 
 " ----------------
 " liuchengxu/vista.vim
