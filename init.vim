@@ -190,6 +190,7 @@ nmap <silent> ta :TestFile<CR>
 nmap <silent> te :TestLast<CR>
 let test#strategy = "vimux"
 let test#ruby#rspec#options = '--format documentation'
+let test#go#gotest#options = '-v -count=1'
 
 " ---------------
 " dispatch.vim
