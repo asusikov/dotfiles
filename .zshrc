@@ -199,5 +199,5 @@ alias gomt='go mod tidy'
 
 alias glmr='glab mr view -c'
 alias glmrl='glab mr list'
-alias glmrn='glab mr new --wip -yft'
+alias glmrn='glab mr new --wip --remove-source-branch -yft'
 alias glci='glab ci view'
