@@ -11,7 +11,7 @@ let g:coc_snippet_prev = '<c-tab>'
 
 " imap <C-u> <Plug>(coc-snippets-expand)
 " imap <tab> <Plug>(coc-snippets-expand)
-inoremap <silent><expr> <Tab>
+inoremap <silent><expr> <cr>
       \ pumvisible() ? coc#_select_confirm() : "\<Tab>"
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
