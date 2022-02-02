@@ -422,8 +422,8 @@
     "Green Component" : 0.19692185521125793
   },
   "Blur" : false,
-  "Normal Font" : "JetBrainsMonoNerdFontComplete-Regular 16",
-  "Vertical Spacing" : 0.94999999999999996,
+  "Normal Font" : "JetBrainsMonoNerdFontComplete-ExtraLight 15",
+  "Vertical Spacing" : 0.90000000000000002,
   "Ansi 7 Color" : {
     "Red Component" : 0.87367779016494751,
     "Color Space" : "Calibrated",
