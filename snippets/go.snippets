@@ -8,6 +8,13 @@ snippet fmu "method of usecase declaration"
 		${0}
 	}
 
+snippet fmbs "method of builder scopes declaration"
+	func (builder *${1}) ${2}(${3}) ${4} {
+		return func(opts ${5}) {
+			${0}
+		}
+	}
+
 snippet fn "function declaration"
 	func ${1}(${2}) ${3} {
 		${4}
@@ -118,11 +125,16 @@ snippet erwfs, "Wrappped with step error return"
 		return ${1:nil}, wrap(${2}, err)
 	}
 
-snippet nr "Return nil"
+snippet rn "Return nil"
 	return nil
 
-snippet nr, "Return multiple values with nil as last"
+snippet rn, "Return multiple values with nil as last"
 	return ${1}, nil
+
+snippet rf "Return function"
+	return func(${1}) ${2} {
+		${0}
+	}
 
 snippet pfw "Format print to writer"
 	fmt.Fprintf(${1:writer}, "${2}\n", ${3})
