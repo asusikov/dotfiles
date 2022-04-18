@@ -151,6 +151,7 @@ source "${brew_path}/opt/powerlevel10k/powerlevel10k.zsh-theme"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
+unset ASDF_DIR
 . "${brew_path}/opt/asdf/asdf.sh"
 
 alias lg='lazygit'
