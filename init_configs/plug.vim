@@ -6,14 +6,17 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 
 Plug 'tpope/vim-projectionist'
-Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-sandwich'
 Plug 'ryanoasis/vim-devicons'
+
 Plug 'easymotion/vim-easymotion'
+Plug 'phaazon/hop.nvim'
+
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
@@ -25,7 +28,6 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'liuchengxu/vista.vim'
-Plug 'chaoren/vim-wordmotion'
 Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
 Plug 'jpalardy/vim-slime', { 'branch': 'main' }
