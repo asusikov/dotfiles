@@ -4,8 +4,12 @@ source ~/.config/nvim/init_configs/basics.vim
 source ~/.config/nvim/init_configs/colours.vim
 source ~/.config/nvim/init_configs/keymaps.vim
 
-source ~/.config/nvim/init_configs/airline.vim
 source ~/.config/nvim/init_configs/coc.vim
+  
+lua <<EOF
+  require('plugins.hop')
+  require('plugins.lualine')
+EOF
 
 function! s:brew_path()
   if system("uname -m") == "arm64\n"
@@ -21,6 +25,7 @@ endfunction
 map <silent> ft :NERDTreeToggle<CR>
 map <silent> ff :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen=1
+
 
 " ---------------
 " vim-test
@@ -75,22 +80,6 @@ nmap <silent> gt :Goyo<CR>
 " scrooloose/nerdtree
 " ---------------
 let NERDTreeShowHidden=1
-
-" ---------------
-" vim-easymotion
-" ---------------
-hi link EasyMotionTarget2First EasyMotionTarget
-hi link EasyMotionTarget2Second EasyMotionTarget
-nmap mw <Plug>(easymotion-w)
-nmap me <Plug>(easymotion-e)
-nmap mb <Plug>(easymotion-b)
-map  mf <Plug>(easymotion-bd-f)
-nmap mf <Plug>(easymotion-overwin-f)
-
-" ---------------
-" vim-wordmotion
-" ---------------
-let g:wordmotion_prefix = '.'
 
 " ---------------
 " ale

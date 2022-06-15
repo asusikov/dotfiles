@@ -14,7 +14,7 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 set clipboard=unnamed
-set timeoutlen=400
+set timeoutlen=300
 set hidden
 let mapleader = " "
 nnoremap <SPACE> <Nop>

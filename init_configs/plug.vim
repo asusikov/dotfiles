@@ -1,8 +1,10 @@
 call plug#begin('~/.config/nvim/bundle')
 
 Plug 'arcticicestudio/nord-vim'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'scrooloose/nerdtree'
+
 Plug 'tpope/vim-commentary'
 
 Plug 'tpope/vim-projectionist'
@@ -12,7 +14,6 @@ Plug 'janko-m/vim-test'
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-sandwich'
-Plug 'ryanoasis/vim-devicons'
 
 Plug 'easymotion/vim-easymotion'
 Plug 'phaazon/hop.nvim'

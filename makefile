@@ -19,6 +19,7 @@ create_links:
 	mkdir -p ~/.config/nvim
 	ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
 	ln -sf ~/dotfiles/init_configs ~/.config/nvim/init_configs
+	ln -sf ~/dotfiles/lua ~/.config/nvim/lua
 	ln -s ~/dotfiles/snippets ~/.config/nvim/snippets
 	ln -sf ~/dotfiles/coc-settings.json ~/.config/nvim/coc-settings.json
 	ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global

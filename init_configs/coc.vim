@@ -9,10 +9,10 @@ xmap <silent> la <Plug>(coc-codeaction-selected)
 let g:coc_snippet_next = '<tab>'
 let g:coc_snippet_prev = '<c-tab>'
 
-" imap <C-u> <Plug>(coc-snippets-expand)
-" imap <tab> <Plug>(coc-snippets-expand)
-inoremap <silent><expr> <cr>
-      \ pumvisible() ? coc#_select_confirm() : "\<Tab>"
+imap <C-u> <Plug>(coc-snippets-expand)
+imap <tab> <Plug>(coc-snippets-expand)
+" inoremap <silent><expr> <cr>
+"       \ pumvisible() ? coc#_select_confirm() : "\<Tab>"
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()

@@ -29,6 +29,7 @@ nnoremap <leader><S-o> O<ESC>
 
 "" Break line
 nnoremap <expr> <CR> &buftype ==# 'quickfix' ? ':.cc<CR>' : 'i<CR><ESC>'
+
 nnoremap fn :cn<CR>
 nnoremap fp :cp<CR>
 " nnoremap <C-CR> :.cc<CR>
