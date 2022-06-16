@@ -14,10 +14,10 @@ window:
 # Font configuration (changes require restart)
 font:
   # The size to use.
-  size: 14
+  size: 15
 
   offset:
-    y: 0
+    y: -4
     x: 0
 
   # Note: This requires RESTART
@@ -27,7 +27,7 @@ font:
   glyph_offset:
    x: 0
    # Keeping this as half of offset to vertically align the text in cursor
-   y: 0
+   y: -2
 
   # The normal (roman) font face to use.
   normal:
