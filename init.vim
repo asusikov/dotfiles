@@ -9,6 +9,7 @@ source ~/.config/nvim/init_configs/coc.vim
 lua <<EOF
   require('plugins.hop')
   require('plugins.lualine')
+  require('plugins.telescope')
 EOF
 
 function! s:brew_path()
