@@ -31,7 +31,7 @@ setup_git:
 
 install_fonts:
 	brew tap homebrew/cask-fonts
-	brew cask install font-jetbrainsmono-nerd-font
+	brew install --cask font-jetbrains-mono-nerd-font
 
 enable_font_smoothing:
 	defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
