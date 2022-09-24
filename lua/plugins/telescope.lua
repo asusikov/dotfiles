@@ -16,6 +16,10 @@ km.set("n", "fg", function()
   require("telescope.builtin").live_grep()
 end)
 
+km.set("n", "fl", function()
+  require("telescope.builtin").find_files()
+end)
+
 km.set("n", ";", function()
   require("telescope.builtin").buffers()
 end)

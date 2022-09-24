@@ -145,7 +145,6 @@ nmap <silent> vo :Vista<CR>
 " ----------------
 let fzf_path=s:brew_path()."/opt/fzf"
 let &rtp .= ','.fzf_path
-nmap <silent> fl :Files<CR>
 let g:fzf_preview_window = []
 
 if !exists('g:fzf_layout')
