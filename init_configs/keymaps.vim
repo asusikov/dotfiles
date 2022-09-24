@@ -47,6 +47,8 @@ nnoremap <silent> <leader>qp :q<CR>
 nnoremap <silent> <leader>qc :pc<CR>
 nnoremap <silent> <leader>qa :qa<CR>
 
+nnoremap <silent> lg :LazyGit<CR>
+
 map <right> <C-W>l
 map <down> <C-W>j
 map <up> <C-W>k
