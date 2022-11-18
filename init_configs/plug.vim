@@ -1,6 +1,7 @@
 call plug#begin('~/.config/nvim/bundle')
 
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'scrooloose/nerdtree'
@@ -18,6 +19,18 @@ Plug 'machakann/vim-sandwich'
 Plug 'easymotion/vim-easymotion'
 Plug 'phaazon/hop.nvim'
 
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+Plug 'honza/vim-snippets'
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*'}
+
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
@@ -27,12 +40,8 @@ Plug 'w0rp/ale'
 Plug 'slim-template/vim-slim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'liuchengxu/vista.vim'
 Plug 'qpkorr/vim-bufkill'
-Plug 'sheerun/vim-polyglot'
 Plug 'jpalardy/vim-slime', { 'branch': 'main' }
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug', 'uml']}
 Plug 'honza/vim-snippets'
 Plug 'liuchengxu/vim-which-key'
 
@@ -43,17 +52,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'kdheepak/lazygit.nvim'
 
 " Ruby
-" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-endwise'
-
-" Elixir
-" Plug 'elixir-editors/vim-elixir'
-
-" Rust
-" Plug 'rust-lang/rust.vim'
-
-" Plug 'fatih/vim-go'
 
 call plug#end()

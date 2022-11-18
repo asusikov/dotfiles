@@ -3,13 +3,13 @@ source ~/.config/nvim/init_configs/plug.vim
 source ~/.config/nvim/init_configs/basics.vim
 source ~/.config/nvim/init_configs/colours.vim
 source ~/.config/nvim/init_configs/keymaps.vim
-
-source ~/.config/nvim/init_configs/coc.vim
   
 lua <<EOF
   require('plugins.hop')
   require('plugins.lualine')
   require('plugins.telescope')
+  require('plugins.cmp')
+  require('plugins.treesitter')
 EOF
 
 function! s:brew_path()
@@ -96,11 +96,11 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%severity%][%linter%][%code%] %s'
-let g:ale_linters = {
-\   'ruby': ['rubocop'],
-\   'elixir': ['credo', 'dialyxir'],
-\   'go': ['golangci-lint']
-\}
+" let g:ale_linters = {
+" \   'ruby': ['rubocop'],
+" \   'elixir': ['credo', 'dialyxir'],
+" \   'go': ['golangci-lint']
+" \}
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'elixir': ['mix_format'],
@@ -129,16 +129,6 @@ let g:ctrlsf_auto_focus = {
     \ "at": "done",
     \ "duration_less_than": 1000
     \ }
-
-" ----------------
-" liuchengxu/vista.vim
-" ----------------
-let g:vista_default_executive = 'coc'
-let g:vista_sidebar_width = 70
-let g:vista_echo_cursor = 0
-let g:vista_close_on_jump = 1
-nmap <silent> vf :Vista finder<CR>
-nmap <silent> vo :Vista<CR>
 
 " ----------------
 " junegunn/fzf.vim
