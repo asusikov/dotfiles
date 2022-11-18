@@ -34,9 +34,7 @@ install_fonts:
 	brew install --cask font-jetbrains-mono-nerd-font
 
 enable_font_smoothing:
-	defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
-	defaults -currentHost write -globalDomain AppleFontSmoothing -int 2
-	defaults write io.alacritty CGFontRenderingFontSmoothingDisabled 1
+	defaults write -g AppleFontSmoothing -int 0
 
 install_zsh:
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
