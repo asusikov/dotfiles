@@ -6,18 +6,38 @@ require('telescope').setup({
           i = {
               ["<esc>"] = actions.close,
           },
+          -- n = { ["q"] = require("telescope.actions").close },
       },
+      prompt_prefix = "   ",
+      selection_caret = "  ",
+      entry_prefix = "  ",
+      initial_mode = "insert",
+      selection_strategy = "reset",
       sorting_strategy = "ascending",
       layout_strategy = "horizontal",
       layout_config = {
         horizontal = {
           prompt_position = "top",
+          preview_width = 0.4,
+          results_width = 0.9,
         },
       },
+      path_display = { "truncate" },
+      winblend = 0,
+      border = {},
+      borderchars = {
+        prompt = { "─", "│", " ", "│", "┌", "┬", "│", "│" },
+        results = { "─", "│", "─", "│", "├", "┤", "┴", "└" },
+        preview = { "─", "│", "─", " ", "─", "┐", "┘", "─" },
+      },
+      width = 1,
+      height = 0.80,
+      preview_cutoff = 120,
   },
   extensions = {
     file_browser = {
       grouped = true,
+      initial_mode = "normal",
     },
   },
 })
