@@ -5,10 +5,11 @@ source ~/.config/nvim/init_configs/colours.vim
 source ~/.config/nvim/init_configs/keymaps.vim
   
 lua <<EOF
+  require('plugins.cmp')
+  require('plugins.fterm')
   require('plugins.hop')
   require('plugins.lualine')
   require('plugins.telescope')
-  require('plugins.cmp')
   require('plugins.treesitter')
 EOF
 

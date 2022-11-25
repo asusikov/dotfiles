@@ -48,7 +48,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
-Plug 'kdheepak/lazygit.nvim'
+Plug 'numToStr/FTerm.nvim'
 
 " Ruby
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
