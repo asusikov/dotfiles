@@ -21,14 +21,6 @@ function! s:brew_path()
 endfunction
 
 " ---------------
-" NERDTree
-" ---------------
-map <silent> ft :NERDTreeToggle<CR>
-map <silent> ff :NERDTreeFind<CR>
-let NERDTreeQuitOnOpen=1
-
-
-" ---------------
 " vim-test
 " ---------------
 nmap <silent> tr :TestNearest<CR>

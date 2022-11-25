@@ -7,6 +7,18 @@ require('telescope').setup({
               ["<esc>"] = actions.close,
           },
       },
+      sorting_strategy = "ascending",
+      layout_strategy = "horizontal",
+      layout_config = {
+        horizontal = {
+          prompt_position = "top",
+        },
+      },
+  },
+  extensions = {
+    file_browser = {
+      grouped = true,
+    },
   },
 })
 
@@ -33,12 +45,9 @@ km.set("n", "ld", function()
 end)
 
 km.set("n", "lp", function()
-  require("telescope.builtin").lsp_definitions() 
-    -- -- previewer = true,
-    -- layout_strategy = "horizontal", 
-    -- grep_open_files = false,
-    -- jump_type = "never", 
-  -- }
+  require("telescope.builtin").lsp_definitions {
+    jump_type = "never",
+  }
 end)
 
 km.set("n", "lo", function()
@@ -51,6 +60,17 @@ end)
 
 km.set("n", "lc", function()
     require("telescope.builtin").lsp_incoming_calls()
+end)
+
+km.set("n", "ff", function()
+  require("telescope").extensions.file_browser.file_browser {
+    path = "%:p:h",
+    select_buffer = true, 
+  }
+end)
+
+km.set("n", "ft", function()
+  require("telescope").extensions.file_browser.file_browser()
 end)
 
 -- km.set('n', '<space>rn', vim.lsp.buf.rename)

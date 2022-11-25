@@ -4,8 +4,6 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'scrooloose/nerdtree'
-
 Plug 'tpope/vim-commentary'
 
 Plug 'tpope/vim-projectionist'
@@ -48,6 +46,7 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 Plug 'kdheepak/lazygit.nvim'
 
