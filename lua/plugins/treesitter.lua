@@ -8,6 +8,8 @@ configs.setup {
     "toml",
     "yaml",
     "json",
+    "elixir",
+    "markdown",
     "sql"
   }, -- Only use parsers that are maintained
   highlight = { -- enable highlighting
