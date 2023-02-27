@@ -5,6 +5,7 @@ source ~/.config/nvim/init_configs/colours.vim
 source ~/.config/nvim/init_configs/keymaps.vim
   
 lua <<EOF
+  require('plugins.luasnip')
   require('plugins.cmp')
   require('plugins.fterm')
   require('plugins.hop')

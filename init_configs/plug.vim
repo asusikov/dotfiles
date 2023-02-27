@@ -20,14 +20,19 @@ Plug 'phaazon/hop.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+Plug 'hrsh7th/nvim-cmp'
+
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'saadparwaiz1/cmp_luasnip'
 
-Plug 'honza/vim-snippets'
 Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*'}
+Plug 'rafamadriz/friendly-snippets'
+
+Plug 'onsails/lspkind-nvim'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
@@ -40,7 +45,6 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'jpalardy/vim-slime', { 'branch': 'main' }
-Plug 'honza/vim-snippets'
 Plug 'liuchengxu/vim-which-key'
 
 Plug 'nvim-lua/popup.nvim'
