@@ -32,6 +32,8 @@ setup_git:
 install_fonts:
 	brew tap homebrew/cask-fonts
 	brew install --cask font-jetbrains-mono-nerd-font
+	brew install --cask font-iosevka-nerd-font
+	brew install --cask font-victor-mono-nerd-font
 
 enable_font_smoothing:
 	defaults write -g AppleFontSmoothing -int 0

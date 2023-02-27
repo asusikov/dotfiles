@@ -11,6 +11,15 @@ window:
     y: 0
   decorations: buttonless
 
+mouse:
+  hide_when_typing: true
+  hints:
+    # URL launcher
+    #
+    # This program is executed when clicking on a text which is recognized as a URL.
+    # The URL is always added to the command as the last parameter.
+    launcher: open
+
 # Font configuration (changes require restart)
 font:
   # The size to use.
@@ -29,18 +38,19 @@ font:
    # Keeping this as half of offset to vertically align the text in cursor
    y: 1
 
-  # The normal (roman) font face to use.
   normal:
+  # The normal (roman) font face to use.
     # family: JetBrainsMono Nerd Font Mono
     # family: Martian Mono
     # family: Iosevka Nerd Font Mono
+    # family: Iosevka Term
     family: VictorMono Nerd Font Mono
     # family: Hack Nerd Font Mono
     # family: Monoid Nerd Font Mono
     # family: FiraCode Nerd Font Mono
     # Style can be specified to pick a specific face.
-    style: Regular
-    # style: Light
+    # style: Regular
+    style: Light
     # style: ExtraLight
     # style: Nr xLt
 
@@ -48,7 +58,7 @@ font:
   bold:
     # family: JetBrainsMono Nerd Font Mono
     family: VictorMono Nerd Font Mono
-    # family: Iosevka Nerd Font
+    # family: Iosevka Nerd Font Mono
     # family: Fira Code
     # Style can be specified to pick a specific face.
     style: Medium 
@@ -59,6 +69,7 @@ font:
   italic:
     # family: JetBrainsMono Nerd Font Mono
     family: VictorMono Nerd Font Mono
+    # family: Iosevka Nerd Font Mono
     # family: Iosevka Nerd Font
     # family: Fira Code
     # Style can be specified to pick a specific face.
