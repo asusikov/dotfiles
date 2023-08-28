@@ -23,7 +23,7 @@ mouse:
 # Font configuration (changes require restart)
 font:
   # The size to use.
-  size: 16
+  size: 15
 
   offset:
     y: 0 
