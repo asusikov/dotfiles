@@ -8,7 +8,7 @@ window:
     lines: 120
   padding:
     x: 5
-    y: 0
+    y: 5
   decorations: buttonless
 
 mouse:
@@ -40,14 +40,12 @@ font:
 
   normal:
   # The normal (roman) font face to use.
-    # family: JetBrainsMono Nerd Font Mono
+    # family: JetBrainsMonoNL Nerd Font Mono
     # family: Martian Mono
-    family: IosevkaTerm Nerd Font Propo
+    # family: IosevkaTerm Nerd Font Propo
+    family: IosevkaTerm Nerd Font Mono
     # family: Iosevka Fixed
     # family: VictorMono Nerd Font Mono
-    # family: Hack Nerd Font Mono
-    # family: Monoid Nerd Font Mono
-    # family: FiraCode Nerd Font Mono
     # Style can be specified to pick a specific face.
     # style: Regular
     style: Light
@@ -58,18 +56,20 @@ font:
   # The bold font face
   bold:
     # family: JetBrainsMono Nerd Font Mono
-    family: IosevkaTerm Nerd Font Propo
-    # family: Iosevka Nerd Font Mono
+    # family: IosevkaTerm Nerd Font Propo
+    # family: Martian Mono
+    family: IosevkaTerm Nerd Font Mono
     # family: Fira Code
     # Style can be specified to pick a specific face.
-    style: Medium 
+    style: SemiBold 
+    # style: Cn Lt
     # style: Bold
     # style: Medium
 
   # The italic font face
   italic:
     # family: JetBrainsMono Nerd Font Mono
-    family: IosevkaTerm Nerd Font Propo
+    family: IosevkaTerm Nerd Font 
     # family: Iosevka Nerd Font Mono
     # family: Iosevka Nerd Font
     # family: Fira Code
@@ -141,6 +141,34 @@ schemes:
       blue:    '#81A1C1'
       magenta: '#B48EAD'
       cyan:    '#8FBCBB'
+      white:   '#ECEFF4'
+
+  # Colors (Snow)
+  snow: &snow
+    # Default colors
+    primary:
+      background: '#ECEFF4'
+      foreground: '#2E3440'
+
+    # Normal colors
+    normal:
+      black:   '#2E3440'
+      red:     '#d73a49'
+      green:   '#22863A'
+      yellow:  '#a89c14'
+      blue:    '#0c60a5'
+      magenta: '#B48EAD'
+      cyan:    '#88C0D0'
+      white:   '#ECEFF4'
+
+    bright:
+      black:   '#2E3440'
+      red:     '#d73a49'
+      green:   '#22863A'
+      yellow:  '#a89c14'
+      blue:    '#0c60a5'
+      magenta: '#B48EAD'
+      cyan:    '#88C0D0'
       white:   '#ECEFF4'
 
   # Colors (Paper Colors)
