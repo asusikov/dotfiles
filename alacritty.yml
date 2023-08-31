@@ -23,7 +23,7 @@ mouse:
 # Font configuration (changes require restart)
 font:
   # The size to use.
-  size: 15
+  size: 16
 
   offset:
     y: 0 
@@ -42,8 +42,7 @@ font:
   # The normal (roman) font face to use.
     # family: JetBrainsMonoNL Nerd Font Mono
     # family: Martian Mono
-    # family: IosevkaTerm Nerd Font Propo
-    family: IosevkaTerm Nerd Font Mono
+    family: IosevkaTerm Nerd Font Propo
     # family: Iosevka Fixed
     # family: VictorMono Nerd Font Mono
     # Style can be specified to pick a specific face.
@@ -56,9 +55,8 @@ font:
   # The bold font face
   bold:
     # family: JetBrainsMono Nerd Font Mono
-    # family: IosevkaTerm Nerd Font Propo
     # family: Martian Mono
-    family: IosevkaTerm Nerd Font Mono
+    family: IosevkaTerm Nerd Font Propo
     # family: Fira Code
     # Style can be specified to pick a specific face.
     style: SemiBold 
