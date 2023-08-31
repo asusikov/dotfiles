@@ -26,7 +26,7 @@ create_links:
 	ln -sf ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 install_yabai:
-	brew install koekeishiya/formulae/yabaiv
+	brew install koekeishiya/formulae/yabai
 	ln -sf ~/dotfiles/.yabairc ~/.yabairc
 	yabai --start-service
 
