@@ -7,7 +7,6 @@ install_dependicies:
 	brew install fzf
 	brew install lazygit
 	brew install ripgrep
-	brew install tmux
 	brew install httpie
 	brew install --cask qutebrowser
 
@@ -24,11 +23,16 @@ create_links:
 	ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 	mkdir -p ~/.config/alacritty
 	ln -sf ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
+	ln -sf ~/dotfiles/.yabairc ~/.yabairc
 
 install_yabai:
 	brew install koekeishiya/formulae/yabai
-	ln -sf ~/dotfiles/.yabairc ~/.yabairc
 	yabai --start-service
+
+install_tmux:
+	brew install tmux
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	tmux source ~/.tmux.conf
 
 setup_git:
 	git config --global core.excludesfile ~/.gitignore_global
@@ -53,7 +57,6 @@ install_vim:
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa"
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 install_go:
 	brew install go
