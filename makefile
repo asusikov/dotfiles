@@ -10,7 +10,6 @@ install_dependicies:
 	brew install tmux
 	brew install httpie
 	brew cask install qutebrowser
-	brew cask install amethyst
 
 create_links:
 	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
@@ -25,6 +24,11 @@ create_links:
 	ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 	mkdir -p ~/.config/alacritty
 	ln -sf ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
+
+install_yabai:
+	brew install koekeishiya/formulae/yabaiv
+	ln -sf ~/dotfiles/.yabairc ~/.yabairc
+	yabai --start-service
 
 setup_git:
 	git config --global core.excludesfile ~/.gitignore_global
