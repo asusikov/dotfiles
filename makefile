@@ -2,14 +2,14 @@ install_brew:
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 
 install_dependicies:
-	brew cask install alacritty
+	brew install --cask alacritty
 	brew install asdf
 	brew install fzf
 	brew install lazygit
 	brew install ripgrep
 	brew install tmux
 	brew install httpie
-	brew cask install qutebrowser
+	brew install --cask qutebrowser
 
 create_links:
 	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
@@ -37,6 +37,7 @@ install_fonts:
 	brew tap homebrew/cask-fonts
 	brew install --cask font-jetbrains-mono-nerd-font
 	brew install --cask font-iosevka-nerd-font
+	brew install --cask font-iosevka-term-nerd-font
 	brew install --cask font-victor-mono-nerd-font
 
 enable_font_smoothing:
