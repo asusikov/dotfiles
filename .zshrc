@@ -1,11 +1,12 @@
 arch_name="$(uname -m)"
 
 if [ "${arch_name}" = "arm64" ]; then
-  brew_path="/opt/homebrew"
+  HOMEBREW_PREFIX="/opt/homebrew"
 else
-  brew_path="/usr/local"
+  HOMEBREW_PREFIX="/usr/local"
 fi
 
+eval $($HOMEBREW_PREFIX/bin/brew shellenv)
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -129,7 +130,7 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source "${brew_path}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # prompt_context() {
   # # if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     # # prompt_segment black default ""
@@ -147,12 +148,12 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_RU.UTF-8
 
-source "${brew_path}/opt/powerlevel10k/powerlevel10k.zsh-theme"
+source "$HOMEBREW_PREFIX/opt/powerlevel10k/powerlevel10k.zsh-theme"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 unset ASDF_DIR
-. "${brew_path}/opt/asdf/libexec/asdf.sh"
+. "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh"
 
 alias lg='lazygit'
 
