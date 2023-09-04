@@ -23,11 +23,16 @@ create_links:
 	ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 	mkdir -p ~/.config/alacritty
 	ln -sf ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
-	ln -sf ~/dotfiles/.yabairc ~/.yabairc
 
 install_yabai:
+	ln -sf ~/dotfiles/.yabairc ~/.yabairc
 	brew install koekeishiya/formulae/yabai
 	yabai --start-service
+
+install_skhd:
+	ln -sf ~/dotfiles/.skhdrc ~/.skhdrc
+	brew install koekeishiya/formulae/skhd
+	skhd --start-service
 
 install_tmux:
 	brew install tmux
