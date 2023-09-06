@@ -41,6 +41,8 @@ install_tmux:
 
 setup_git:
 	git config --global core.excludesfile ~/.gitignore_global
+	git config --global user.name asusikov
+	git config --global user.email susikov.alexander@gmail.com
 
 install_fonts:
 	brew tap homebrew/cask-fonts
