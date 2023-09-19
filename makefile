@@ -8,6 +8,7 @@ install_dependicies:
 	brew install lazygit
 	brew install ripgrep
 	brew install httpie
+	brew install jq
 	brew install --cask qutebrowser
 
 create_links:
