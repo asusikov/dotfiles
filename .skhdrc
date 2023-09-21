@@ -4,6 +4,12 @@
 # alt - k : yabai -m window --focus north
 # alt - l : yabai -m window --focus east
 
+# move window and split
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - l : yabai -m window --warp east
+
 # rotate tree
 alt - r : yabai -m space --rotate 90
 
@@ -19,3 +25,13 @@ alt - e : yabai -m window --toggle split
 # toggle window zoom
 # alt - d : yabai -m window --toggle zoom-parent
 alt - f : yabai -m window --toggle zoom-fullscreen
+
+# restart yabai
+ctrl + alt - r : yabai --restart-service
+
+# focus app hotkeys
+alt + shift - z : yabai -m query --windows | jq '.[] | select(.app=="zoom.us").id' | xargs yabai -m window --focus
+alt + shift - j : yabai -m query --windows | jq '.[] | select(.app=="Jitsi Meet").id' | xargs yabai -m window --focus
+alt + shift - m : yabai -m query --windows | jq '.[] | select(.app=="Mattermost").id' | xargs yabai -m window --focus
+alt + shift - t : yabai -m query --windows | jq '.[] | select(.app=="Telegram").id' | xargs yabai -m window --focus
+
