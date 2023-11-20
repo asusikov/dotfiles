@@ -8,10 +8,10 @@ lua <<EOF
   require('plugins.luasnip')
   require('plugins.cmp')
   require('plugins.fterm')
-  require('plugins.hop')
   require('plugins.lualine')
   require('plugins.telescope')
   require('plugins.treesitter')
+  require('plugins.leap')
 EOF
 
 function! s:brew_path()
