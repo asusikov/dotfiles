@@ -26,8 +26,8 @@ alt - e : yabai -m window --toggle split
 # alt - d : yabai -m window --toggle zoom-parent
 alt - f : yabai -m window --toggle zoom-fullscreen
 
-# restart yabai
-ctrl + alt - r : yabai --restart-service
+# restart yabai and shkd
+ctrl + alt - r : yabai --restart-service; shkd --restart-service
 
 # focus app hotkeys
 alt + shift - z : yabai -m query --windows | jq '.[] | select(.app=="zoom.us").id' | xargs yabai -m window --focus
@@ -35,3 +35,5 @@ alt + shift - j : yabai -m query --windows | jq '.[] | select(.app=="Jitsi Meet"
 alt + shift - m : yabai -m query --windows | jq '.[] | select(.app=="Mattermost").id' | xargs yabai -m window --focus
 alt + shift - t : yabai -m query --windows | jq '.[] | select(.app=="Telegram").id' | xargs yabai -m window --focus
 
+# Minimize window and focus first window
+cmd - m : yabai -m window --minimize; yabai -m query --windows --space | jq '.[] | select(."is-minimized"==false).id' | xargs yabai -m window --focus
