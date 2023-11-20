@@ -14,8 +14,7 @@ Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-sandwich'
 
-Plug 'easymotion/vim-easymotion'
-Plug 'phaazon/hop.nvim'
+Plug 'ggandor/leap.nvim'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
