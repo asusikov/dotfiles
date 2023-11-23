@@ -18,8 +18,8 @@ require('telescope').setup({
       layout_config = {
         horizontal = {
           prompt_position = "top",
-          preview_width = 0.4,
-          results_width = 0.9,
+          preview_width = 0.45,
+          -- results_width = 1,
         },
       },
       path_display = { "truncate" },
@@ -30,9 +30,20 @@ require('telescope').setup({
         results = { "─", "│", "─", "│", "├", "┤", "┴", "└" },
         preview = { "─", "│", "─", " ", "─", "┐", "┘", "─" },
       },
-      width = 1,
+      -- width = 1.5,
       height = 0.80,
       preview_cutoff = 120,
+  },
+  pickers = {
+    lsp_references = {
+      show_line = false,
+    },
+    lsp_implementations = {
+      show_line = false,
+    },
+    lsp_document_symbols = {
+      symbol_width = 60,
+    }
   },
   extensions = {
     file_browser = {
