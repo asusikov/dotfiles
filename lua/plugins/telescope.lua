@@ -49,6 +49,7 @@ require('telescope').setup({
     file_browser = {
       grouped = true,
       initial_mode = "normal",
+      hidden = { file_browser = true, folder_browser = true },
     },
   },
 })
