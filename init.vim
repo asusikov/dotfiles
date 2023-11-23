@@ -175,6 +175,10 @@ let g:projectionist_heuristics = {
       \ }
       \ }
 
+" ----------------
+" preservim/vimux
+" ----------------
+let g:VimuxHeight = "40"
 
 " Map leader to which_key
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
