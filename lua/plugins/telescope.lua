@@ -43,6 +43,9 @@ require('telescope').setup({
     },
     lsp_document_symbols = {
       symbol_width = 60,
+    },
+    find_files = {
+      hidden = true,
     }
   },
   extensions = {
