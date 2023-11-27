@@ -58,4 +58,6 @@ Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-endwise'
 
+Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
+
 call plug#end()

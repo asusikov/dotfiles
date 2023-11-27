@@ -12,6 +12,8 @@ lua <<EOF
   require('plugins.telescope')
   require('plugins.treesitter')
   require('plugins.leap')
+  require('plugins.codeium_config')
+  require('plugins.vimux')
 EOF
 
 function! s:brew_path()
@@ -174,11 +176,6 @@ let g:projectionist_heuristics = {
       \   },
       \ }
       \ }
-
-" ----------------
-" preservim/vimux
-" ----------------
-let g:VimuxHeight = "40"
 
 " Map leader to which_key
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
