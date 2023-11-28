@@ -16,6 +16,7 @@ return {
                   },
                   -- n = { ["q"] = require("telescope.actions").close },
               },
+              color_devicons = false,
               prompt_prefix = "   ",
               selection_caret = "  ",
               entry_prefix = "  ",
