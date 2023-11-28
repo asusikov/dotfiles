@@ -40,6 +40,7 @@ Plug 'rizzatti/dash.vim'
 Plug 'mhinz/vim-startify'
 
 Plug 'stevearc/conform.nvim'
+Plug 'mfussenegger/nvim-lint'
 
 Plug 'slim-template/vim-slim'
 Plug 'dyng/ctrlsf.vim'

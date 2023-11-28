@@ -10,11 +10,11 @@ lua <<EOF
   require('plugins.fterm')
   require('plugins.lualine')
   require('plugins.telescope')
-  require('plugins.treesitter')
   require('plugins.leap')
   require('plugins.codeium_config')
   require('plugins.vimux')
   require('plugins.conform')
+  require('plugins.nvim-lint')
 EOF
 
 function! s:brew_path()
