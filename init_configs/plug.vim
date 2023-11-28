@@ -38,7 +38,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 Plug 'rizzatti/dash.vim'
 Plug 'mhinz/vim-startify'
-Plug 'w0rp/ale'
+
+Plug 'stevearc/conform.nvim'
+
 Plug 'slim-template/vim-slim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'junegunn/goyo.vim'

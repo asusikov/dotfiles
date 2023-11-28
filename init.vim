@@ -14,6 +14,7 @@ lua <<EOF
   require('plugins.leap')
   require('plugins.codeium_config')
   require('plugins.vimux')
+  require('plugins.conform')
 EOF
 
 function! s:brew_path()
@@ -73,42 +74,43 @@ let g:goyo_width = 120
 let g:goy_height = 100
 nmap <silent> gt :Goyo<CR>
 
-" ---------------
-" scrooloose/nerdtree
-" ---------------
-let NERDTreeShowHidden=1
+" " ---------------
+" " scrooloose/nerdtree
+" " ---------------
+" let NERDTreeShowHidden=1
 
-" ---------------
-" ale
-" ---------------
-let g:ale_sign_error = '|'
-let g:ale_sign_warning = '|'
-let g:ale_set_highlights = 0
-let g:ale_sign_column_always = 1
-let g:ale_linters_explicit = 1
-let g:ale_disable_lsp = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%severity%][%linter%][%code%] %s'
-" let g:ale_linters = {
-" \   'ruby': ['rubocop'],
-" \   'elixir': ['credo', 'dialyxir'],
-" \   'go': ['golangci-lint']
-" \}
-let g:ale_fixers = {
-\   'ruby': ['rubocop'],
-\   'elixir': ['mix_format'],
-\   'go': ['gofmt', 'goimports'],
-\   'json': ['jq'],
-\   'sql': ['pgformatter'],
-\}
-let g:ale_go_golangci_lint_options = '--fast'
-let g:ale_go_gofmt_options = '-s'
-let g:ale_go_goimports_options = "-local $(grep ^module go.mod | awk '{print $2}')"
-let g:ale_fix_on_save = 1
-nmap <leader>af <Plug>(ale_fix)
+" " ---------------
+" " ale
+" " ---------------
+" let g:ale_sign_error = '|'
+" let g:ale_sign_warning = '|'
+" let g:ale_set_highlights = 0
+" let g:ale_sign_column_always = 1
+" let g:ale_linters_explicit = 1
+" let g:ale_disable_lsp = 1
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_insert_leave = 0
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_echo_msg_format = '[%severity%][%linter%][%code%] %s'
+" " let g:ale_linters = {
+" " \   'ruby': ['rubocop'],
+" " \   'elixir': ['credo', 'dialyxir'],
+" " \   'go': ['golangci-lint']
+" " \}
+" " let g:ale_fixers = {
+" " \   'ruby': ['rubocop'],
+" " \   'elixir': ['mix_format'],
+" " \   'go': ['gofmt', 'goimports'],
+" " \   'json': ['jq'],
+" " \   'sql': ['pgformatter'],
+" " \   'lua': ['stylua'],
+" " \}
+" let g:ale_go_golangci_lint_options = '--fast'
+" let g:ale_go_gofmt_options = '-s'
+" let g:ale_go_goimports_options = "-local $(grep ^module go.mod | awk '{print $2}')"
+" let g:ale_fix_on_save = 1
+" nmap <leader>af <Plug>(ale_fix)
 
 " ---------------
 " ctrlsf
