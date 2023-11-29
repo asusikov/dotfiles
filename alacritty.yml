@@ -48,8 +48,8 @@ font:
     # family: VictorMono Nerd Font Mono
     # Style can be specified to pick a specific face.
     # style: Condensed Regular
-    style: Light
-    # style: ExtraLight
+    # style: Light
+    style: ExtraLight
     # style: Cn xLt
     # style: Nr xLt
 
@@ -73,7 +73,7 @@ font:
     # family: Fira Code
     # Style can be specified to pick a specific face.
     # style: Cn Th
-    style: Italic Light
+    style: Italic ExtraLight
 
   /* use_thin_strokes: true */
 
