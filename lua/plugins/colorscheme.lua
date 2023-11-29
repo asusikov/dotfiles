@@ -1,5 +1,6 @@
 return {
-    'shaunsingh/nord.nvim',
+    -- 'shaunsingh/nord.nvim',
+  'arcticicestudio/nord-vim',
     priority = 1000, 
     config = function()
       -- load the colorscheme here
