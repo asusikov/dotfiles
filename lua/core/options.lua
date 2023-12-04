@@ -10,10 +10,11 @@ local opts = {
 	expandtab = true,
 	timeoutlen = 300,
 	hidden = true,
+	cmdheight = 0,
 }
 
-for k,v in pairs(opts) do
- vim.opt[k] = v
+for k, v in pairs(opts) do
+	vim.opt[k] = v
 end
 
 vim.opt.clipboard:append("unnamedplus")
