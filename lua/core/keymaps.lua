@@ -6,6 +6,7 @@ keymap.set("n", "<leader>sf", ":w<CR>", { desc = "Save file", silent = true })
 keymap.set("n", "<leader>sa", ":wa<CR>", { desc = "Save all", silent = true })
 
 keymap.set("n", "<leader>qp", ":q<CR>", { desc = "Close pane", silent = true })
+keymap.set("n", "<leader>qf", ":q<CR>", { desc = "Close file", silent = true })
 keymap.set("n", "<leader>qa", ":qa<CR>", { desc = "Close all", silent = true })
 
 keymap.set("n", "<leader>pv", ":vsplit<CR>", { desc = "Split panes vertical", silent = true })
