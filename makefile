@@ -15,6 +15,8 @@ create_links:
 	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 	ln -sf ~/dotfiles/.zshrc ~/.zshrc
 	ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
+	mkdir -p ~/.config/bat
+	ln -sf ~/dotfiles/bat.conf ~/.config/bat/config
 	mkdir -p ~/.config/nvim
 	ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
 	ln -sf ~/dotfiles/init_configs ~/.config/nvim/init_configs
