@@ -41,7 +41,7 @@ nnoremap <silent> <leader>pv :vsplit<CR>
 nnoremap <silent> <leader>ph :split<CR>
 
 "" Close buffer but not pane
-nnoremap <silent> <leader>qf :BD<CR>
+nnoremap <silent> <leader>qf :bd<CR>
 "" Close pane
 nnoremap <silent> <leader>qp :q<CR>
 nnoremap <silent> <leader>qc :pc<CR>
