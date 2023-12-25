@@ -18,7 +18,7 @@ create_links:
 	mkdir -p ~/.config/bat
 	ln -sf ~/dotfiles/bat.conf ~/.config/bat/config
 	mkdir -p ~/.config/nvim
-	ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
+	ln -sf ~/dotfiles/init.lua ~/.config/nvim/init.lua
 	ln -sf ~/dotfiles/init_configs ~/.config/nvim/init_configs
 	ln -sf ~/dotfiles/lua ~/.config/nvim/lua
 	ln -s ~/dotfiles/snippets ~/.config/nvim/snippets
