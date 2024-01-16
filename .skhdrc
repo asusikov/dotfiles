@@ -34,6 +34,7 @@ alt + shift - z : yabai -m query --windows | jq '.[] | select(.app=="zoom.us").i
 alt + shift - j : yabai -m query --windows | jq '.[] | select(.app=="Jitsi Meet").id' | xargs yabai -m window --focus
 alt + shift - m : yabai -m query --windows | jq '.[] | select(.app=="Mattermost").id' | xargs yabai -m window --focus
 alt + shift - t : yabai -m query --windows | jq '.[] | select(.app=="Telegram").id' | xargs yabai -m window --focus
+alt + shift - a : yabai -m query --windows | jq '.[] | select(.app=="Arc" and .title!="").id' | xargs yabai -m window --focus
 
 # Minimize window and focus first window
 cmd - m : yabai -m window --minimize; yabai -m query --windows --space | jq '.[] | select(."is-minimized"==false).id' | xargs yabai -m window --focus
