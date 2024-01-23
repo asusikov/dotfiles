@@ -1,15 +1,11 @@
+.PHONY : install_brew install_dependicies create_links
+
 install_brew:
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	brew tap homebrew/bundle
 
 install_dependicies:
-	brew install --cask alacritty
-	brew install asdf
-	brew install fzf
-	brew install lazygit
-	brew install ripgrep
-	brew install httpie
-	brew install jq
-	brew install --cask qutebrowser
+	@brew bundle --file=./Brewfile
 
 create_links:
 	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
@@ -19,10 +15,7 @@ create_links:
 	ln -sf ~/dotfiles/bat.conf ~/.config/bat/config
 	mkdir -p ~/.config/nvim
 	ln -sf ~/dotfiles/init.lua ~/.config/nvim/init.lua
-	ln -sf ~/dotfiles/init_configs ~/.config/nvim/init_configs
-	ln -sf ~/dotfiles/lua ~/.config/nvim/lua
-	ln -s ~/dotfiles/snippets ~/.config/nvim/snippets
-	ln -sf ~/dotfiles/coc-settings.json ~/.config/nvim/coc-settings.json
+	ln -sf ~/dotfiles/lua ~/.config/nvim
 	ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 	mkdir -p ~/.config/alacritty
 	ln -sf ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
@@ -47,13 +40,6 @@ setup_git:
 	git config --global user.name asusikov
 	git config --global user.email susikov.alexander@gmail.com
 
-install_fonts:
-	brew tap homebrew/cask-fonts
-	brew install --cask font-jetbrains-mono-nerd-font
-	brew install --cask font-iosevka-nerd-font
-	brew install --cask font-iosevka-term-nerd-font
-	brew install --cask font-victor-mono-nerd-font
-
 enable_font_smoothing:
 	defaults write -g AppleFontSmoothing -int 0
 
@@ -73,3 +59,5 @@ install_go:
 
 update_dependicies:
 	brew upgrade
+
+setup: install_brew install_dependicies create_links
