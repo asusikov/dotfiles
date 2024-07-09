@@ -18,7 +18,7 @@ create_links:
 	ln -sf ~/dotfiles/lua ~/.config/nvim
 	ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 	mkdir -p ~/.config/alacritty
-	ln -sf ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
+	ln -sf ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 	ln -s ~/dotfiles/karabiner ~/.config
 
 install_yabai:
@@ -62,3 +62,7 @@ update_dependicies:
 	brew upgrade
 
 setup: install_brew install_dependicies create_links
+
+migrate_alacritty_configs:
+	unlink ~/.config/alacritty/alacritty.yml
+	ln -sf ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml

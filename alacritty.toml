@@ -1,0 +1,238 @@
+[colors.bright]
+black = "#4C566A"
+blue = "#81A1C1"
+cyan = "#8FBCBB"
+green = "#A3BE8C"
+magenta = "#B48EAD"
+red = "#BF616A"
+white = "#ECEFF4"
+yellow = "#EBCB8B"
+
+[colors.normal]
+black = "#3B4252"
+blue = "#81A1C1"
+cyan = "#88C0D0"
+green = "#A3BE8C"
+magenta = "#B48EAD"
+red = "#BF616A"
+white = "#E5E9F0"
+yellow = "#EBCB8B"
+
+[colors.primary]
+background = "#2E3440"
+foreground = "#D8DEE9"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 15
+
+[font.bold]
+family = "IosevkaTerm Nerd Font Propo"
+style = "Regular"
+
+[font.glyph_offset]
+x = 0
+y = 2
+
+[font.italic]
+family = "IosevkaTerm Nerd Font Propo"
+style = "Italic ExtraLight"
+
+[font.normal]
+family = "IosevkaTerm Nerd Font Propo"
+style = "ExtraLight"
+
+[font.offset]
+x = 0
+y = 2
+
+[[keyboard.bindings]]
+chars = "\u0002,"
+key = "Comma"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002K"
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+lfcd
+"""
+key = "F"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+:GitFiles
+"""
+key = "P"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+:Commands
+"""
+key = "P"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002g"
+key = "G"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002s"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00020"
+key = "Key0"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00021"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00022"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00023"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00024"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00025"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00026"
+key = "Key6"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00027"
+key = "Key7"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00028"
+key = "Key8"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u00029"
+key = "Key9"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002L"
+key = "L"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002["
+key = "LBracket"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002p"
+key = "LBracket"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002u"
+key = "O"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002%"
+key = "E"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002\""
+key = "E"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+:q
+"""
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002n"
+key = "RBracket"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = """
+:w
+"""
+key = "S"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+:wa
+"""
+key = "S"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0002:"
+key = "Semicolon"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002c"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002T"
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002x"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0002z"
+key = "Z"
+mods = "Command"
+
+[mouse]
+hide_when_typing = true
+
+[selection]
+save_to_clipboard = true
+
+[window]
+decorations = "buttonless"
+
+[window.dimensions]
+columns = 240
+lines = 120
+
+[window.padding]
+x = 5
+y = 5
