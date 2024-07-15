@@ -28,25 +28,26 @@ TERM = "xterm-256color"
 [font]
 size = 15
 
-[font.bold]
-family = "IosevkaTerm Nerd Font Propo"
-style = "Regular"
-
 [font.glyph_offset]
 x = 0
 y = 2
 
-[font.italic]
-family = "IosevkaTerm Nerd Font Propo"
-style = "Italic ExtraLight"
-
-[font.normal]
-family = "IosevkaTerm Nerd Font Propo"
-style = "ExtraLight"
-
 [font.offset]
 x = 0
-y = 2
+y = 4
+
+[font.italic]
+family = "ZedMono Nerd Font Propo"
+style = "Italic Light"
+
+[font.normal]
+# family = "IosevkaTerm Nerd Font Propo"
+family = "ZedMono Nerd Font Propo"
+style = "Light"
+
+[font.bold]
+family = "ZedMono Nerd Font Propo"
+style = "Regular"
 
 [[keyboard.bindings]]
 chars = "\u0002,"
