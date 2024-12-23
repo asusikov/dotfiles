@@ -49,5 +49,7 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^OrbStack$" title="^General|System|Docker|Kubernetes|Network|Storage$" manage=off
 yabai -m rule --add app="^Discord$" title="^Discord Updater$" manage=off
+yabai -m rule --add title="^Open$" manage=off
+yabai -m rule --add app="^Red Shield VPN$" manage=off
 
 echo "yabai configuration loaded.."
