@@ -26,7 +26,7 @@ foreground = "#D8DEE9"
 TERM = "xterm-256color"
 
 [font]
-size = 15
+size = 13
 
 [font.glyph_offset]
 x = 0
@@ -37,17 +37,16 @@ x = 0
 y = 4
 
 [font.italic]
-family = "ZedMono Nerd Font Propo"
-style = "Italic Light"
+family = "MartianMono Nerd Font"
+style = "Condensed Light"
 
 [font.normal]
-# family = "IosevkaTerm Nerd Font Propo"
-family = "ZedMono Nerd Font Propo"
-style = "Light"
+family = "MartianMono Nerd Font"
+style = "Condensed ExtraLight"
 
 [font.bold]
-family = "ZedMono Nerd Font Propo"
-style = "Regular"
+family = "MartianMono Nerd Font"
+style = "Condensed Regular"
 
 [[keyboard.bindings]]
 chars = "\u0002,"
