@@ -7,7 +7,7 @@ return {
     require('lualine').setup {
       options = {
         icons_enabled = true,
-        theme = 'nord',
+        theme = 'dawnfox',
         component_separators = '',
         section_separators = '',
         disabled_filetypes = {},

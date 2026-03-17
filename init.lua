@@ -2,7 +2,7 @@ require("core")
 
 require("lazy").setup({ import = "plugins" }, {
   install = {
-    colorscheme = { "nord" },
+    colorscheme = { "nightfox" },
   },
   ui = {
     border = "single",
