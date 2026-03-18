@@ -5,7 +5,6 @@ return {
 	},
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-		local lspconfig = require("lspconfig")
 		local builtin = require("telescope.builtin")
 		local keymap = vim.keymap
 
@@ -58,16 +57,20 @@ return {
 			end)
 		end
 
-		lspconfig["lua_ls"].setup({
+		vim.lsp.config["lua_ls"] = {
 			on_attach = on_attach,
-		})
+		}
 
-		lspconfig["gopls"].setup({
+		vim.lsp.config["gopls"] = {
 			on_attach = on_attach,
-		})
+		}
 
-		lspconfig["solargraph"].setup({
+		vim.lsp.config["solargraph"] = {
 			on_attach = on_attach,
-		})
+		}
+
+		vim.lsp.enable("lua_ls", true)
+		vim.lsp.enable("gopls", true)
+		vim.lsp.enable("solargraph", true)
 	end,
 }
