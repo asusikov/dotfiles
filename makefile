@@ -19,7 +19,9 @@ create_links:
 	ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 	mkdir -p ~/.config/alacritty
 	ln -sf ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
-	ln -s ~/dotfiles/karabiner ~/.config
+	ln -sf ~/dotfiles/karabiner ~/.config
+	rm -rf ~/.config/ghostty
+	ln -sf ~/dotfiles/ghostty ~/.config/ghostty
 
 install_yabai:
 	ln -sf ~/dotfiles/.yabairc ~/.yabairc
