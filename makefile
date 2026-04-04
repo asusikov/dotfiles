@@ -22,6 +22,8 @@ create_links:
 	ln -sf ~/dotfiles/karabiner ~/.config
 	rm -rf ~/.config/ghostty
 	ln -sf ~/dotfiles/ghostty ~/.config/ghostty
+	rm -rf ~/.config/yazi
+	ln -sf ~/dotfiles/yazi ~/.config/yazi
 
 install_yabai:
 	ln -sf ~/dotfiles/.yabairc ~/.yabairc
