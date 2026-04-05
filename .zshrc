@@ -154,7 +154,7 @@ eval "$(direnv hook zsh)"
 alias lg='lazygit'
 
 # create tmux session with nvim and opencode
-create_tmux_development() {
+run_develop_with_opencode() {
   tmux new -s $1 -n dev \; \
     split-window -h \; \
     select-pane -t 0 \; \
@@ -165,7 +165,20 @@ create_tmux_development() {
     select-pane -t 2 \; \
     send-keys 'opencode' C-m
 }
-alias ctd='create_tmux_development'
+alias ocd='run_develop_with_opencode'
+
+run_develop_with_claude() {
+  tmux new -s $1 -n dev \; \
+    split-window -h \; \
+    select-pane -t 0 \; \
+    resize-pane -x 91 \; \
+    split-window -v -l 5 \; \
+    select-pane -t 0 \; \
+    send-keys 'nv' C-m \; \
+    select-pane -t 2 \; \
+    send-keys 'claude' C-m
+}
+alias cld='run_develop_with_claude'
 
 # alias for cmus-remote
 alias lcp='cmus-remote -u'
