@@ -155,6 +155,9 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 unset ASDF_DIR
 . "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh"
 
+
+eval "$(direnv hook zsh)"
+
 alias lg='lazygit'
 
 # create tmux session with nvim and lazygit
@@ -188,6 +191,7 @@ alias lcp='cmus-remote -u'
 bindkey '^N' clear-screen
 
 alias nv='nvim'
+alias oc='opencode'
 
 alias lst='tree --dirsfirst'
 
@@ -204,3 +208,4 @@ alias glmrl='glab mr list'
 alias glmrn='glab mr new --wip --remove-source-branch -yft'
 alias glmrw='BROWSER="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome" glab mr view -w'
 alias glci='glab ci view'
+eval "$($HOMEBREW_PREFIX/bin/mise activate zsh)"
