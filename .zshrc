@@ -160,25 +160,17 @@ eval "$(direnv hook zsh)"
 
 alias lg='lazygit'
 
-# create tmux session with nvim and lazygit
+# create tmux session with nvim and opencode
 create_tmux_development() {
-  # tmux new -s $1 -n nvim \; new-window -n 'gitlab' \; new-window \; select-window -t 0 \; send-keys 'nv' C-m \; split-window -v -p 30 \;
-  tmux new -s $1 -n nvim \; \
-    new-window -n gitlab \; \
-    new-window -n httpie \; \
-    new-window -n psql \; \
-    new-window -n deps \; \
-    select-window -t 0 \; \
-    split-window -v -p 30 \; \
+  tmux new -s $1 -n dev \; \
+    split-window -h \; \
+    select-pane -t 0 \; \
+    resize-pane -x 91 \; \
+    split-window -v -l 5 \; \
     select-pane -t 0 \; \
     send-keys 'nv' C-m \; \
-  #   select-window -t 2 \; \
-  #   split-window -v \; \
-  #   select-pane -t 0 \; \
-  #   split-window -h \; \
-  #   select-pane -t 0 \; \
-  #   send-keys 'cd ~/Development/httpie/' C-m \; \
-  #   select-window -t 0 \; \
+    select-pane -t 2 \; \
+    send-keys 'opencode' C-m
 }
 alias ctd='create_tmux_development'
 
