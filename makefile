@@ -10,7 +10,6 @@ install_dependicies:
 create_links:
 	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 	ln -sf ~/dotfiles/.zshrc ~/.zshrc
-	ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 	mkdir -p ~/.config/bat
 	ln -sf ~/dotfiles/bat.conf ~/.config/bat/config
 	mkdir -p ~/.config/nvim
@@ -50,7 +49,7 @@ enable_font_smoothing:
 
 install_zsh:
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
-	brew install romkatv/powerlevel10k/powerlevel10k
+	brew install starship
 	brew install zsh-syntax-highlighting
 
 install_vim:

@@ -8,12 +8,6 @@ fi
 
 eval $($HOMEBREW_PREFIX/bin/brew shellenv)
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -148,7 +142,6 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_RU.UTF-8
 
-source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
@@ -177,8 +170,6 @@ alias ctd='create_tmux_development'
 # alias for cmus-remote
 alias lcp='cmus-remote -u'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 bindkey '^N' clear-screen
 
@@ -201,3 +192,5 @@ alias glmrn='glab mr new --wip --remove-source-branch -yft'
 alias glmrw='BROWSER="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome" glab mr view -w'
 alias glci='glab ci view'
 eval "$($HOMEBREW_PREFIX/bin/mise activate zsh)"
+
+eval "$(starship init zsh)"
