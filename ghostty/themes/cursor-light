@@ -1,6 +1,7 @@
-# Cursor Light — A Ghostty theme inspired by Cursor IDE's visual style
+# Cursor Light — A Ghostty theme matching the cursor-light nvim colorscheme
 #
-# Warm, earthy, sophisticated, and minimalist.
+# Colors sourced from vpoltora/cursor-light.nvim palette for consistency
+# across Ghostty, tmux, and Neovim.
 #
 # Installation:
 #   1. Copy this file to ~/.config/ghostty/themes/
@@ -11,29 +12,29 @@
 #   3. Restart Ghostty
 
 # Core colors
-background = #f7f7f4
-foreground = #26251e
-cursor-color = #26251e
-cursor-text = #f7f7f4
-selection-background = #d4d2c8
-selection-foreground = #26251e
+background = #FCFCFC
+foreground = #141414
+cursor-color = #141414
+cursor-text = #FCFCFC
+selection-background = #E8E8E8
+selection-foreground = #141414
 
 # ANSI Normal (0-7)
-palette = 0=#3b3a33
-palette = 1=#b35147
-palette = 2=#4d7a3d
-palette = 3=#806821
-palette = 4=#4a73a6
-palette = 5=#835c96
-palette = 6=#3d7a6c
-palette = 7=#646258
+palette = 0=#141414
+palette = 1=#B31B3F
+palette = 2=#1F8A65
+palette = 3=#C08532
+palette = 4=#206595
+palette = 5=#B8448B
+palette = 6=#4C7F8C
+palette = 7=#6F6F6F
 
 # ANSI Bright (8-15)
-palette = 8=#6b6a62
-palette = 9=#9e3832
-palette = 10=#2d6622
-palette = 11=#6b5518
-palette = 12=#2c5a94
-palette = 13=#6f4487
-palette = 14=#2a6356
-palette = 15=#706e66
+palette = 8=#555555
+palette = 9=#CF2D56
+palette = 10=#55A583
+palette = 11=#DB704B
+palette = 12=#6299C3
+palette = 13=#D06BA6
+palette = 14=#6F9BA6
+palette = 15=#999999
