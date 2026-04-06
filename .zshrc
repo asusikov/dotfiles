@@ -149,8 +149,6 @@ unset ASDF_DIR
 . "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh"
 
 
-eval "$(direnv hook zsh)"
-
 alias lg='lazygit'
 
 # create tmux session with nvim and opencode
@@ -205,5 +203,6 @@ alias glmrn='glab mr new --wip --remove-source-branch -yft'
 alias glmrw='BROWSER="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome" glab mr view -w'
 alias glci='glab ci view'
 eval "$($HOMEBREW_PREFIX/bin/mise activate zsh)"
+eval "$(direnv hook zsh)"
 
 eval "$(starship init zsh)"
