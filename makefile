@@ -23,6 +23,7 @@ create_links:
 	ln -sf ~/dotfiles/ghostty ~/.config/ghostty
 	rm -rf ~/.config/yazi
 	ln -sf ~/dotfiles/yazi ~/.config/yazi
+	ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
 
 install_yabai:
 	ln -sf ~/dotfiles/.yabairc ~/.yabairc
