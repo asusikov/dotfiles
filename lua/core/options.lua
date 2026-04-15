@@ -11,6 +11,7 @@ local opts = {
 	timeoutlen = 300,
 	hidden = true,
 	cmdheight = 0,
+	autoread = true,
 }
 
 for k, v in pairs(opts) do
@@ -18,3 +19,9 @@ for k, v in pairs(opts) do
 end
 
 vim.opt.clipboard:append("unnamedplus")
+
+local aug = vim.api.nvim_create_augroup("AutoReload", { clear = true })
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+	group = aug,
+	command = "silent! checktime",
+})
