@@ -157,10 +157,11 @@ run_develop_with_opencode() {
     split-window -h \; \
     select-pane -t 0 \; \
     resize-pane -x 91 \; \
-    split-window -v -l 5 \; \
+    select-pane -t 1 \; \
+    split-window -v \; \
     select-pane -t 0 \; \
     send-keys 'nv' C-m \; \
-    select-pane -t 2 \; \
+    select-pane -t 1 \; \
     send-keys 'opencode' C-m
 }
 alias ocd='run_develop_with_opencode'
@@ -170,10 +171,11 @@ run_develop_with_claude() {
     split-window -h \; \
     select-pane -t 0 \; \
     resize-pane -x 91 \; \
-    split-window -v -l 5 \; \
+    select-pane -t 1 \; \
+    split-window -v \; \
     select-pane -t 0 \; \
     send-keys 'nv' C-m \; \
-    select-pane -t 2 \; \
+    select-pane -t 1 \; \
     send-keys 'claude' C-m
 }
 alias cld='run_develop_with_claude'
